@@ -17,7 +17,7 @@ function ItemMapperCtd({ items }: any) {
                 src={`https://www.youtube.com/embed/${item.acf.youtube}`}
                 title="YouTube video player"
                 // @ts-ignore
-                frameborder="0"
+                frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
               ></iframe>
             </div>
