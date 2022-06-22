@@ -72,6 +72,7 @@ function Agenda({ spectacles }: any) {
                       <iframe
                         src="https://player.vimeo.com/video/716393806?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
                         allow="autoplay; fullscreen; picture-in-picture"
+                        // @ts-ignore
                         frameborder="0"
                         allowfullscreen
                         title="L&amp;#039;installation de la peur - Teaser"
