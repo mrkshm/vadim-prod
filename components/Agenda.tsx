@@ -78,7 +78,10 @@ function Agenda({ spectacles }: any) {
                         title="L&amp;#039;installation de la peur - Teaser"
                         className="player"
                       />
-                      <script src="https://player.vimeo.com/api/player.js"></script>
+                      <script
+                        src="https://player.vimeo.com/api/player.js"
+                        defer
+                      />
                     </div>
                   ) : null}
                 </div>

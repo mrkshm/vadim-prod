@@ -29,10 +29,10 @@ function ItemMapperCtd({ items }: any) {
                 src={`https://player.vimeo.com/video/${item.acf.vimeo}`}
                 allow="autoplay; fullscreen; picture-in-picture"
                 // @ts-ignore
-                frameborder="0"
-                allowfullscreen
+                frameBorder="0"
+                allowFullScreen
               />
-              <script src="https://player.vimeo.com/api/player.js"></script>
+              <script src="https://player.vimeo.com/api/player.js" defer />
             </div>
           ) : null}
 
