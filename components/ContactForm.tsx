@@ -80,7 +80,7 @@ function ContactForm({ ctText }: CformProps) {
         <label htmlFor="message">
           Votre message
           <textarea
-            rows="8"
+            rows={8}
             name="message"
             value={contactInfo.message}
             onChange={handleChange}
