@@ -1,0 +1,127 @@
+.agendaItem {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+  max-width: 90%;
+}
+
+.spec-image {
+  max-width: 250px;
+  max-height: 250px;
+  object-fit: contain;
+}
+
+.description {
+  font-weight: 400;
+  color: var(--dark);
+}
+
+.spec-title {
+  font-family: var(--font-title);
+  color: var(--midnight);
+  font-size: 20px;
+  letter-spacing: 00.05em;
+  padding-top: 0px;
+}
+
+.spec-date {
+  padding: 4px 0;
+}
+
+.spec-place {
+  font-size: 18px;
+}
+
+.videoPart {
+  width: 100%;
+  overflow: hidden;
+}
+
+.ctd-itemImage {
+  max-height: 200px;
+  max-width: 200px;
+}
+
+.vimeo {
+  max-width: 100%;
+  max-height: 100%;
+  margin-left: -20px;
+}
+iframe {
+  display: block;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .spec-image {
+    width: 80%;
+    max-height: 200px;
+    object-fit: cover;
+    object-position: left top;
+  }
+
+  .agendaItem {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 3fr 2fr 2fr;
+    align-items: center;
+  }
+
+  .ctd-itemImage {
+    max-height: 160px;
+    max-width: 160px;
+    object-fit: cover;
+  }
+
+  .vimeo {
+    margin-left: 0;
+  }
+
+  .ctd-textPart {
+    grid-area: textPart;
+    padding: 0 16px;
+  }
+
+  .ctd-videoPart {
+    grid-area: videoPart;
+  }
+
+  .ctd-imagePart {
+    grid-area: imagePart;
+  }
+  .ctd-distribution {
+    font-weight: 300;
+  }
+  .ctd-gridder {
+    padding: 16px 0;
+    display: grid;
+    grid-template-rows: 1fr 20px;
+    gap: 12px;
+  }
+
+  .ctd-vimeo {
+    margin-top: 0px;
+  }
+
+  .ctd-gridder:nth-child(odd) {
+    grid-template-columns: 1fr 1fr 4fr;
+    grid-template-areas:
+      "imagePart videoPart textPart"
+      "line line line";
+  }
+
+  //   .ctd-gridder:nth-child(odd) .ctd-textPart {
+  //     align-self: start;
+  //   }
+
+  .ctd-gridder:nth-child(even) {
+    grid-template-columns: 4fr 1fr 1fr;
+    grid-template-areas:
+      "textPart videoPart imagePart"
+      "line line line";
+  }
+
+  .ctd-gridder:last-child .line {
+    display: none;
+  }
+}

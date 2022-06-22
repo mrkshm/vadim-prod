@@ -1,0 +1,29 @@
+{
+  "name": "vadim-prod",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@sendgrid/mail": "^7.7.0",
+    "next": "12.1.6",
+    "phosphor-react": "^1.4.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-modal": "^3.15.1",
+    "sass": "^1.52.3"
+  },
+  "devDependencies": {
+    "@types/node": "18.0.0",
+    "@types/react": "18.0.14",
+    "@types/react-dom": "18.0.5",
+    "@types/react-modal": "^3.13.1",
+    "eslint": "8.18.0",
+    "eslint-config-next": "12.1.6",
+    "typescript": "4.7.4"
+  }
+}

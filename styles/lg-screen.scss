@@ -1,0 +1,30 @@
+@media (min-width: 768px) {
+  .mainSection {
+    display: grid;
+    height: calc(100vh - 70px);
+    grid-template-columns: 3fr 7fr;
+    grid-template-columns: 3fr 7fr;
+  }
+
+  .stripe {
+    display: inline;
+  }
+  .sidebar {
+    padding: 16px;
+  }
+  .sidebar-photo {
+    display: inline;
+  }
+
+  .mentions {
+    display: inline;
+  }
+
+  .sidebar-title-mobile-right {
+    display: none;
+  }
+
+  .musique-citation {
+    max-width: 260px;
+  }
+}
