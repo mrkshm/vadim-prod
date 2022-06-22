@@ -2,7 +2,7 @@ function ItemMapperCtd({ items }: any) {
   return (
     <div>
       {items.map((item: any) => (
-        <div className="ctd-gridder">
+        <div key={item.title.rendered} className="ctd-gridder">
           <div className="ctd-imagePart">
             <img
               className="ctd-itemImage"

@@ -11,7 +11,7 @@ function MentionsLegales() {
           Hébergement : <br />
           mrks.me
           <br />
-          59, de l'Aqueduc
+          59, de l&apos;Aqueduc
           <br />
           75010 Paris
         </p>

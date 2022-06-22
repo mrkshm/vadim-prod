@@ -3,7 +3,7 @@ function Agenda({ spectacles }: any) {
     <div>
       <div className="agendaItems">
         {spectacles.map((spectacle: any) => (
-          <div>
+          <div key={spectacle.title.rendered}>
             <div className="agendaItem">
               <div className="textPart">
                 {/* Title */}
@@ -73,10 +73,10 @@ function Agenda({ spectacles }: any) {
                         src="https://player.vimeo.com/video/716393806?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
                         allow="autoplay; fullscreen; picture-in-picture"
                         // @ts-ignore
-                        frameborder="0"
-                        allowfullscreen
+                        frameBorder="0"
+                        allowFullScreen
                         title="L&amp;#039;installation de la peur - Teaser"
-                        class="player"
+                        className="player"
                       />
                       <script src="https://player.vimeo.com/api/player.js"></script>
                     </div>

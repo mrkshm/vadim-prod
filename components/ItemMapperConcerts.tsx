@@ -2,7 +2,7 @@ function ItemMapperConcerts({ items }: any) {
   return (
     <div>
       {items.map((item: any) => (
-        <div className="ctd-gridder">
+        <div key={item.title.rendered} className="ctd-gridder">
           <div className="ctd-imagePart">
             <img
               className="ctd-itemImage"
@@ -19,7 +19,7 @@ function ItemMapperConcerts({ items }: any) {
                 src={`https://www.youtube.com/embed/${item.acf.youtube}`}
                 title="YouTube video player"
                 // @ts-ignore
-                frameborder="0"
+                frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
               ></iframe>
             </div>
