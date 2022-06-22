@@ -262,7 +262,7 @@ modal-dialog {
   z-index: 10;
 }
 .hero-slug {
-  font-size: 3.5vmin;
+  font-size: 3vmin;
   letter-spacing: 0.05em;
   line-height: 0.5;
   padding-left: 8px;
@@ -270,7 +270,7 @@ modal-dialog {
 }
 
 .hero-title {
-  font-size: 16vmin;
+  font-size: 15vmin;
   padding: 0 0 12px 8px;
   margin: 0;
   line-height: 1;
@@ -303,7 +303,7 @@ modal-dialog {
     height: calc(100vh - 70px);
     width: 100%;
     grid-template-columns: 1fr;
-    grid-template-rows: 60% 1fr;
+    grid-template-rows: 75% 1fr;
     align-items: end;
     overflow: hidden;
   }
