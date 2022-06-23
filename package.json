@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "@sendgrid/mail": "^7.7.0",
-    "easy-peasy": "^5.0.4",
     "framer-motion": "^6.3.13",
     "next": "12.1.6",
     "phosphor-react": "^1.4.1",

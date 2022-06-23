@@ -1,5 +1,5 @@
 import SidebarMusique from "../components/SidebarMusique";
-import ItemMapperCtd from "../components/ItemMapperCtd";
+import ItemMapperAlt from "../components/ItemMapperAlt";
 import { sortInvChrono } from "../src/utils/helpers";
 
 function discographie({ result }: any) {
@@ -11,7 +11,7 @@ function discographie({ result }: any) {
         <SidebarMusique />
       </div>
       <div className="main">
-        <ItemMapperCtd items={films} />
+        <ItemMapperAlt items={films} />
       </div>
     </div>
   );
