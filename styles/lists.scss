@@ -158,20 +158,19 @@ iframe {
   }
 
   .alt-flexor {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+    display: grid;
+    grid-template-columns: 40% 1fr;
     width: 100%;
     padding: 16px 0 0 0;
     margin: 0;
   }
 
   .alt-imagePart {
-    width: 45%;
+    width: 100%;
   }
 
   .alt-textPart {
-    width: 55%;
+    width: 95%;
     margin: 0;
     padding: 0;
     height: 100%;
@@ -181,7 +180,7 @@ iframe {
   }
 
   .alt-itemImage {
-    width: 80%;
+    width: 90%;
     // rotate: 2deg;
   }
 
@@ -190,8 +189,9 @@ iframe {
     font-size: 16px;
   }
   .alt-videoPart iframe {
-    width: 80%;
-    height: 200px;
+    width: 60%;
+    height: 150px;
+    margin-top: 16px;
   }
 
   // .alt-gridder:nth-child(even) .alt-itemImage {

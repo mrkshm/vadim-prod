@@ -10,31 +10,6 @@ function ItemMapperAlt({ items }: any) {
                 src={item.acf.imageUrl}
                 alt="detail du spectacle"
               />
-
-              {item.acf.youtube ? (
-                <div className="alt-videoPart">
-                  <iframe
-                    src={`https://www.youtube.com/embed/${item.acf.youtube}`}
-                    title="YouTube video player"
-                    // @ts-ignore
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
-                  ></iframe>
-                </div>
-              ) : null}
-
-              {item.acf.vimeo ? (
-                <div className="alt-videoPart alt-vimeo">
-                  <iframe
-                    src={`https://player.vimeo.com/video/${item.acf.vimeo}`}
-                    allow="autoplay; fullscreen; picture-in-picture"
-                    // @ts-ignore
-                    frameBorder="0"
-                    allowFullScreen
-                  />
-                  <script src="https://player.vimeo.com/api/player.js" defer />
-                </div>
-              ) : null}
             </div>
 
             <div className="alt-textPart">
@@ -47,10 +22,35 @@ function ItemMapperAlt({ items }: any) {
                   }}
                 ></div>
               </div>
-              <div className="item-info">
-                <div className="item-distribution">{item.acf.distribution}</div>
-                <div className="item-label">{item.acf.label}</div>
+            </div>
+
+            {item.acf.youtube ? (
+              <div className="alt-videoPart">
+                <iframe
+                  src={`https://www.youtube.com/embed/${item.acf.youtube}`}
+                  title="YouTube video player"
+                  // @ts-ignore
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+                ></iframe>
               </div>
+            ) : null}
+
+            {item.acf.vimeo ? (
+              <div className="alt-videoPart alt-vimeo">
+                <iframe
+                  src={`https://player.vimeo.com/video/${item.acf.vimeo}`}
+                  allow="autoplay; fullscreen; picture-in-picture"
+                  // @ts-ignore
+                  frameBorder="0"
+                  allowFullScreen
+                />
+                <script src="https://player.vimeo.com/api/player.js" defer />
+              </div>
+            ) : null}
+            <div className="item-info">
+              <div className="item-distribution">{item.acf.distribution}</div>
+              <div className="item-label">{item.acf.label}</div>
             </div>
           </div>
 
