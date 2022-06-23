@@ -1,4 +1,3 @@
-import Player from "./Player";
 import Image from "next/image";
 
 import ReactHowler from "react-howler";
@@ -67,10 +66,11 @@ function PlayerBar() {
   }, [volume]);
 
   useEffect(() => {
-    let timerId;
+    let timerId: any;
 
     if (playing && !isSeeking) {
       const f = () => {
+        // @ts-ignore
         setSeek(soundRef.current.seek());
         timerId = requestAnimationFrame(f);
       };
