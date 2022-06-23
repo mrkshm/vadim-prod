@@ -10,20 +10,6 @@ function ItemMapperAlt({ items }: any) {
                 src={item.acf.imageUrl}
                 alt="detail du spectacle"
               />
-              <div className="item-info">
-                <div className="item-distribution">{item.acf.distribution}</div>
-                <div className="item-label">{item.acf.label}</div>
-              </div>
-            </div>
-
-            <div className="alt-textPart">
-              <h3 className="alt-textTitle">{item.title.rendered}</h3>
-              <div
-                className="alt-description"
-                dangerouslySetInnerHTML={{
-                  __html: item.content.rendered,
-                }}
-              ></div>
 
               {item.acf.youtube ? (
                 <div className="alt-videoPart">
@@ -49,6 +35,22 @@ function ItemMapperAlt({ items }: any) {
                   <script src="https://player.vimeo.com/api/player.js" defer />
                 </div>
               ) : null}
+            </div>
+
+            <div className="alt-textPart">
+              <div className="">
+                <h3 className="alt-textTitle">{item.title.rendered}</h3>
+                <div
+                  className="alt-description"
+                  dangerouslySetInnerHTML={{
+                    __html: item.content.rendered,
+                  }}
+                ></div>
+              </div>
+              <div className="item-info">
+                <div className="item-distribution">{item.acf.distribution}</div>
+                <div className="item-label">{item.acf.label}</div>
+              </div>
             </div>
           </div>
 
