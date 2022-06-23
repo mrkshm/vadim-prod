@@ -1,0 +1,125 @@
+.playerBar {
+  // background-color: var(--dark);
+  color: var(--cream);
+  height: 70px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: none;
+  align-items: center;
+  padding: 0 16px;
+  max-width: 1400px;
+  background-color: rgba($color: rgb(219, 225, 206), $alpha: 0.12);
+}
+
+.trackInfo {
+  width: 25%;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.trackPic {
+  border-radius: 50%;
+}
+
+.playerMaind {
+  width: 55%;
+}
+
+.volumeSection {
+  width: 20%;
+  display: flex;
+  align-items: center;
+  color: var(--light);
+}
+
+.volSlider {
+  padding-left: 16px;
+}
+
+.albumName {
+  font-size: 14px;
+  opacity: 0.75;
+}
+
+.playerControlContainer {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  width: 100%;
+}
+.playerControls {
+  display: flex;
+  gap: 24px;
+  font-size: 20px;
+  align-items: center;
+}
+
+.playerSkipBack:hover,
+.playerSkipForward:hover,
+.playerPlay:hover {
+  color: var(--egg);
+}
+
+.playerSkipBack:active,
+.playerSkipForward:active,
+.playerPlay:active {
+  color: var(--light);
+}
+
+.playButton {
+  display: inline;
+}
+
+.pauseButton {
+  display: none;
+}
+
+.seekBarContainer {
+  display: flex;
+  font-size: 16px;
+  width: 100%;
+  align-items: center;
+  color: var(--light);
+}
+
+.playerCurrentTime {
+  padding-left: 16px;
+  padding-right: 8px;
+}
+
+.playerTotalTime {
+  padding-left: 8px;
+}
+
+.slideContainer {
+  display: flex;
+  align-items: center;
+  // background-color: rgba($color: rgb(219, 225, 206), $alpha: 0.12);
+  width: 65%;
+  padding: 0 16px;
+  border-radius: 16px;
+}
+
+.timeSlider {
+  width: 100%;
+  opacity: 1; /* Set transparency (for mouse-over effects on hover) */
+}
+
+.volumeSection {
+  // background-color: rgba($color: rgb(219, 225, 206), $alpha: 0.12);
+  padding: 0 0px 0 24px;
+  border-radius: 16px;
+  margin-top: 4px;
+}
+
+.volSlider {
+  width: 50%;
+}
+
+@media (min-width: 768px) {
+  .playerBar {
+    display: flex;
+  }
+}

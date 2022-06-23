@@ -1,4 +1,5 @@
 import type { NextPage } from "next";
+import { motion } from "framer-motion";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
@@ -19,16 +20,16 @@ const Home: NextPage = () => {
       <div className="stripe"></div>
       <div className="home-gridder">
         <ul className="centerBreathing">
-          <li className="li-cc breathing">
+          <motion.li className="li-cc breathing">
             <Link href="/cine-concerts">
               <a>Ciné-concerts</a>
             </Link>
-          </li>
-          <li className="li-c breathing">
+          </motion.li>
+          <motion.li className="li-c breathing">
             <Link href="/concerts">
               <a>Concerts</a>
             </Link>
-          </li>
+          </motion.li>
 
           <li className="li-t breathing">
             <Link href="/theatre">

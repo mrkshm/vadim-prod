@@ -1,9 +1,9 @@
 import SidebarMusique from "../components/SidebarMusique";
 import ItemMapperCtd from "../components/ItemMapperCtd";
-import { sortChrono } from "../src/utils/helpers";
+import { sortInvChrono } from "../src/utils/helpers";
 
 function discographie({ result }: any) {
-  const films = result.sort(sortChrono);
+  const films = result.sort(sortInvChrono);
 
   return (
     <div className="mainSection">
