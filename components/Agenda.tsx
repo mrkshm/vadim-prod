@@ -1,8 +1,8 @@
 import VideoPlayer from "./VideoPlayer";
 
-function Agenda({ spectacle }: any) {
+function Agenda({ spectacle, key }: any) {
   return (
-    <div>
+    <div key={key}>
       <div className="agendaItem">
         <div className="affiche">
           {spectacle.acf.imageUrl ? (

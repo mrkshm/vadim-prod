@@ -16,7 +16,7 @@ function agenda({ agendaSideBarPics, agendaItems }: any) {
       </div>
       <div className="main">
         {spectacles.map((spectacle: any) => (
-          <Agenda spectacle={spectacle} />
+          <Agenda key={spectacle.id} spectacle={spectacle} />
         ))}
       </div>
     </div>
