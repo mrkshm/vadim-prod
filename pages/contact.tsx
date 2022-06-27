@@ -1,5 +1,6 @@
 import ContactForm from "../components/ContactForm";
 import SidebarContact from "../components/SidebarContact";
+import { motion } from "framer-motion";
 
 function contact({ ct }: any) {
   return (

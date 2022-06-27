@@ -15,8 +15,8 @@ export default async function handler(
 
   mail
     .send({
-      to: "hey@mrks.me",
-      from: "mrks.heumann@gmail.com",
+      to: "mrks.heumann@gmail.com",
+      from: "hey@mrks.me",
       subject: "Nouveau message du site",
       text: formulaire,
       html: formulaireHtml.replace(/\r\n/g, "<br>"),

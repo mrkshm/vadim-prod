@@ -1,15 +1,24 @@
 .agendaItem {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 8px;
   align-items: flex-start;
-  max-width: 90%;
+  max-width: 100%;
+}
+
+.affiche {
+  width: 50%;
+}
+
+.textPart {
+  width: 50%;
+  color: var(--text-color);
 }
 
 .spec-image {
-  max-width: 250px;
-  max-height: 250px;
-  object-fit: contain;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
 }
 
 .description {
@@ -19,9 +28,9 @@
 
 .spec-title {
   font-family: var(--font-title);
-  color: var(--midnight);
-  font-size: 20px;
-  letter-spacing: 00.05em;
+  font-size: 32px;
+  letter-spacing: 0.05em;
+  font-weight: 400;
   padding-top: 0px;
 }
 
@@ -31,6 +40,11 @@
 
 .spec-place {
   font-size: 18px;
+}
+
+.spec-video {
+  width: 60%;
+  padding-top: 52px;
 }
 
 .videoPart {
@@ -43,28 +57,12 @@
   max-width: 200px;
 }
 
-.vimeo {
-  max-width: 100%;
-  max-height: 100%;
-  margin-left: -20px;
-}
-iframe {
-  display: block;
-  width: 100%;
-}
 @media (min-width: 768px) {
   .spec-image {
     width: 80%;
-    max-height: 200px;
+    max-height: 80%;
     object-fit: cover;
     object-position: left top;
-  }
-
-  .agendaItem {
-    display: grid;
-    grid-template-rows: 1fr;
-    grid-template-columns: 3fr 2fr 2fr;
-    align-items: center;
   }
 
   .ctd-itemImage {
@@ -145,6 +143,43 @@ iframe {
   padding: 8px 0;
 }
 
+.imageRow {
+  padding: 16px 8px 8px;
+}
+
+.item-image-main {
+  max-width: 80%;
+  max-height: 350px;
+}
+
+.main .oddOrEven:nth-child(odd) .imageRow {
+  transform: rotate(-4deg);
+}
+
+.main .oddOrEven:nth-child(even) .imageRow {
+  transform: rotate(4deg);
+}
+
+.thumbImage {
+  max-width: 100px;
+  max-height: 100px;
+}
+
+// ItemMapper CTD ALT
+
+.ReactModal__Overlay {
+  opacity: 0;
+  transition: opacity 200ms ease-in-out;
+}
+
+.ReactModal__Overlay--after-open {
+  opacity: 1;
+}
+
+.ReactModal__Overlay--before-close {
+  opacity: 0;
+}
+
 @media (min-width: 768px) {
   .alt-textTitle {
     font-family: var(--font-title);
@@ -161,8 +196,33 @@ iframe {
     display: grid;
     grid-template-columns: 40% 1fr;
     width: 100%;
-    padding: 16px 0 0 0;
+    padding: 0px 0 0 0;
     margin: 0;
+  }
+
+  .co-alt-flexor {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    padding: 0px 0 0 0;
+    margin: 0;
+  }
+
+  .co-alt-videoPart iframe {
+    width: 90%;
+    height: 270px;
+  }
+
+  .ctd-alt-gridder {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+  }
+
+  .ctd-alt-videoPart iframe {
+    display: block;
+    width: 500px;
+    height: 500px;
   }
 
   .alt-imagePart {
@@ -180,7 +240,7 @@ iframe {
   }
 
   .alt-itemImage {
-    padding-top: 8px;
+    padding-top: 4px;
     width: 90%;
     // rotate: 2deg;
   }
@@ -189,9 +249,11 @@ iframe {
     line-height: 1.5;
     font-size: 16px;
   }
+
   .alt-videoPart iframe {
-    width: 60%;
-    height: 150px;
+    // width: 60%;
+    width: 150px;
+    height: 100px;
     margin-top: 16px;
   }
 

@@ -1,5 +1,5 @@
 import SidebarMusique from "../components/SidebarMusique";
-import ItemMapperCtd from "../components/ItemMapperCtd";
+import ItemsCp from "../components/ItemsCp";
 import { sortChrono } from "../src/utils/helpers";
 
 function cinema({ result }: any) {
@@ -11,7 +11,9 @@ function cinema({ result }: any) {
         <SidebarMusique />
       </div>
       <div className="main">
-        <ItemMapperCtd items={films} />
+        {films.map((film: any) => (
+          <ItemsCp item={film} key={film.id} />
+        ))}
       </div>
     </div>
   );

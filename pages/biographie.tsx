@@ -1,5 +1,6 @@
 import SidebarBiographie from "../components/SidebarBiographie";
 import Biographie from "../components/Biographie";
+import { motion } from "framer-motion";
 
 function biographie({ bio }: any) {
   return (

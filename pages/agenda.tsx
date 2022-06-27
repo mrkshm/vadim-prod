@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import Agenda from "../components/Agenda";
 import SidebarAgenda from "../components/SidebarAgenda";
 import { sortChrono } from "../src/utils/helpers";
@@ -14,7 +15,9 @@ function agenda({ agendaSideBarPics, agendaItems }: any) {
         />
       </div>
       <div className="main">
-        <Agenda spectacles={spectacles} />
+        {spectacles.map((spectacle: any) => (
+          <Agenda spectacle={spectacle} />
+        ))}
       </div>
     </div>
   );

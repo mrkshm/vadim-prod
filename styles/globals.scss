@@ -29,7 +29,7 @@ body {
 .stripe {
   position: absolute;
   height: 100vh;
-  width: 2px;
+  width: 1px;
   background-color: var(--egg);
   top: 0;
   left: 0;
@@ -103,8 +103,18 @@ a {
   background: linear-gradient(to right, #f5ef4e, #d1deff);
   height: 1px;
   border: none;
-  margin: 16px 8px;
+  margin: 24px 8px;
   grid-area: line;
+}
+
+.musards-logo {
+  height: 52px;
+  width: 52px;
+}
+
+.concert-title-flex {
+  display: flex;
+  gap: 16px;
 }
 
 .bg-midnight {
@@ -277,19 +287,24 @@ modal-dialog {
   line-height: 1;
 }
 
+.music-menu-ul a:hover {
+  color: var(--egg);
+}
+
 @media (min-width: 768px) {
   ::-webkit-scrollbar {
     width: 20px;
   }
 
   ::-webkit-scrollbar-track {
-    background: var(--dark);
+    // background: rgb(52, 70, 81);
+    background: linear-gradient(to bottom, #1c3140, rgb(52, 70, 81));
   }
 
   ::-webkit-scrollbar-thumb {
     border-radius: 12px;
     width: 8px;
-    border: 0.25em solid var(--dark);
+    border: 0.25em solid rgb(52, 70, 81);
     background: var(--light);
   }
   ::-webkit-scrollbar-thumb:hover {
@@ -358,6 +373,10 @@ modal-dialog {
     display: none;
   }
   .hero {
+    display: inline;
+  }
+
+  .stripe {
     display: inline;
   }
 }

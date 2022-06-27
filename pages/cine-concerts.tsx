@@ -1,6 +1,6 @@
 import SidebarMusique from "../components/SidebarMusique";
-import ItemMapperCtd from "../components/ItemMapperCtd";
-
+// import ItemMapperCoAlt from "../components/ItemMapperCoAlt";
+import ItemsCp from "../components/ItemsCp";
 import { sortInvChrono } from "../src/utils/helpers";
 
 function cineConcerts({ result }: any) {
@@ -11,7 +11,9 @@ function cineConcerts({ result }: any) {
         <SidebarMusique />
       </div>
       <div className="main">
-        <ItemMapperCtd items={concerts} />
+        {concerts.map((concert: any) => (
+          <ItemsCp item={concert} key={concert.id} />
+        ))}
       </div>
     </div>
   );

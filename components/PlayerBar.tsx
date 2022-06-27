@@ -20,6 +20,13 @@ const tracks = [
       "https://musards.fr/wp/vadimsher/wp-content/uploads/sites/2/2022/06/don_juan.jpg",
   },
   {
+    titre: "Pot pourri",
+    spectacle: "Don Juan",
+    url: "https://musards.fr/wp/vadimsher/wp-content/uploads/sites/2/2022/06/Don_Juan_Pot_pourri.mp3",
+    imageUrl:
+      "https://musards.fr/wp/vadimsher/wp-content/uploads/sites/2/2022/06/don_juan.jpg",
+  },
+  {
     titre: "La Coupe écrasée",
     spectacle: "Le Degré 41",
     url: "https://musards.fr/wp/vadimsher/wp-content/uploads/sites/2/2022/06/Degre_41_la_coupe_ecrasee.mp3",
@@ -27,11 +34,67 @@ const tracks = [
       "https://musards.fr/wp/vadimsher/wp-content/uploads/sites/2/2022/06/degre_41.jpeg",
   },
   {
-    titre: "Corale",
+    titre: "Le Manteau",
+    spectacle: "Le Degré 41",
+    url: "https://musards.fr/wp/vadimsher/wp-content/uploads/sites/2/2022/06/Degre_41_le_manteau.mp3",
+    imageUrl:
+      "https://musards.fr/wp/vadimsher/wp-content/uploads/sites/2/2022/06/degre_41.jpeg",
+  },
+  {
+    titre: "Au kabak",
+    spectacle: "Le Kaddish",
+    url: "https://musards.fr/wp/vadimsher/wp-content/uploads/sites/2/2022/06/kaddish_au_kabak.mp3",
+    imageUrl:
+      "https://musards.fr/wp/vadimsher/wp-content/uploads/sites/2/2022/06/le_kaddish.jpg",
+  },
+  {
+    titre: "Chorale",
     spectacle: "Le Kaddish",
     url: "https://musards.fr/wp/vadimsher/wp-content/uploads/sites/2/2022/06/kaddish_Chorale.mp3",
     imageUrl:
       "https://musards.fr/wp/vadimsher/wp-content/uploads/sites/2/2022/06/le_kaddish.jpg",
+  },
+  {
+    titre: "Sabbat",
+    spectacle: "Le Kaddish",
+    url: "https://musards.fr/wp/vadimsher/wp-content/uploads/sites/2/2022/06/kaddish_Sabbat.mp3",
+    imageUrl:
+      "https://musards.fr/wp/vadimsher/wp-content/uploads/sites/2/2022/06/le_kaddish.jpg",
+  },
+  {
+    titre: "Mécanique de Mme Diss",
+    spectacle: "Les Serpents",
+    url: "https://musards.fr/wp/vadimsher/wp-content/uploads/sites/2/2022/06/Serpents_Mecanique_de_Mme_Diss.mp3",
+    imageUrl:
+      "https://musards.fr/wp/vadimsher/wp-content/uploads/sites/2/2022/06/serpents.jpg",
+  },
+  {
+    titre: "Sortilège de France",
+    spectacle: "Les Serpents",
+    url: "https://musards.fr/wp/vadimsher/wp-content/uploads/sites/2/2022/06/Serpents_Sortilege_de_France.mp3",
+    imageUrl:
+      "https://musards.fr/wp/vadimsher/wp-content/uploads/sites/2/2022/06/serpents.jpg",
+  },
+  {
+    titre: "La fuite",
+    spectacle: "Varietà",
+    url: "https://musards.fr/wp/vadimsher/wp-content/uploads/sites/2/2022/06/Varieta_La_fuite.mp3",
+    imageUrl:
+      "https://musards.fr/wp/vadimsher/wp-content/uploads/sites/2/2022/06/varieta.jpg",
+  },
+  {
+    titre: "En revenant des noces",
+    spectacle: "En revenant des noces",
+    url: "https://musards.fr/wp/vadimsher/wp-content/uploads/sites/2/2022/06/EnRevenantDesNoces.mp3",
+    imageUrl:
+      "https://musards.fr/wp/vadimsher/wp-content/uploads/sites/2/2022/06/Disque_EnRevenantDesNoces.png",
+  },
+  {
+    titre: "Beata Viscera",
+    spectacle: "Worldes Blis",
+    url: "https://musards.fr/wp/vadimsher/wp-content/uploads/sites/2/2022/06/WoldesBlis_BeataViscera.mp3",
+    imageUrl:
+      "https://musards.fr/wp/vadimsher/wp-content/uploads/sites/2/2022/06/WorldesBlis-Pochette-scaled.jpg",
   },
 ];
 
@@ -176,6 +239,7 @@ function PlayerBar() {
               <div className="playerCurrentTime">{displaySeekTime}</div>
               <div className="slideContainer">
                 <input
+                  disabled
                   className="timeSlider"
                   type="range"
                   min="1"

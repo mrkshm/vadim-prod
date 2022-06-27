@@ -107,14 +107,69 @@
   opacity: 1; /* Set transparency (for mouse-over effects on hover) */
 }
 
+.timeSlider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: green;
+  cursor: pointer;
+}
+
 .volumeSection {
   // background-color: rgba($color: rgb(219, 225, 206), $alpha: 0.12);
   padding: 0 0px 0 24px;
   border-radius: 16px;
+
   margin-top: 4px;
 }
 
 .volSlider {
+  width: 50%;
+}
+
+.item-line {
+  width: 100%;
+  display: flex;
+  gap: 8px;
+}
+
+.video-part {
+  width: 50%;
+  padding: 16px;
+}
+
+.text-part {
+  color: var(--text-color);
+}
+
+.item-title {
+  font-family: var(--font-title);
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 1.1;
+  letter-spacing: 0.05em;
+  margin: 12px 0 20px 0;
+}
+
+.distribution {
+  font-size: 14px;
+  // font-weight: 300;
+}
+
+.playerWrapper {
+  position: relative;
+  padding-top: 56.25%; /* 720 / 1280 = 0.5625 */
+}
+
+.react-player {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.text-part {
   width: 50%;
 }
 

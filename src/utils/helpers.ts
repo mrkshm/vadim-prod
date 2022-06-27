@@ -23,3 +23,11 @@ export function sortChrono(a: sortArg, b: sortArg) {
   }
   return 0;
 }
+
+export const itemVariants = {
+  hidden: { opacity: 0 },
+  visible: (custom: number) => ({
+    opacity: 1,
+    transition: { delay: custom },
+  }),
+};

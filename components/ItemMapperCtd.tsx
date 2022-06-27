@@ -1,8 +1,18 @@
+import { itemVariants } from "../src/utils/helpers";
+import { motion } from "framer-motion";
+
 function ItemMapperCtd({ items }: any) {
   return (
     <div>
-      {items.map((item: any) => (
-        <div key={item.title.rendered} className="ctd-gridder">
+      {items.map((item: any, index: number) => (
+        <motion.div
+          variants={itemVariants}
+          initial="hidden"
+          animate="visible"
+          custom={(index + 1) * 0.2}
+          key={item.title.rendered}
+          className="ctd-gridder"
+        >
           <div className="ctd-imagePart">
             <img
               className="ctd-itemImage"
@@ -46,7 +56,7 @@ function ItemMapperCtd({ items }: any) {
             ></div>
           </div>
           <hr className="line" />
-        </div>
+        </motion.div>
       ))}
     </div>
   );

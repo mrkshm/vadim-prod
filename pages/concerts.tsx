@@ -1,5 +1,6 @@
 import SidebarMusique from "../components/SidebarMusique";
-import ItemMapperConcerts from "../components/ItemMapperConcerts";
+import ItemsCpThe from "../components/ItemsCpThe";
+// import { motion } from "framer-motion";
 
 import { sortChrono } from "../src/utils/helpers";
 
@@ -12,7 +13,9 @@ function musique({ result }: any) {
         <SidebarMusique />
       </div>
       <div className="main">
-        <ItemMapperConcerts items={concerts} />
+        {concerts.map((concert: any) => (
+          <ItemsCpThe item={concert} key={concert.id} />
+        ))}
       </div>
     </div>
   );

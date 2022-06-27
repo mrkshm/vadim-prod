@@ -84,7 +84,7 @@ function ContactForm({ ctText }: CformProps) {
             name="message"
             value={contactInfo.message}
             onChange={handleChange}
-            placeholder="message"
+            placeholder="Bonjour Vadim, "
           />
         </label>
         <button className="submitButton" type="submit">

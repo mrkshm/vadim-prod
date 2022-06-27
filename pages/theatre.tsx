@@ -1,6 +1,6 @@
 import SidebarMusique from "../components/SidebarMusique";
-import ItemMapperCtd from "../components/ItemMapperCtd";
-
+import ItemsCpThe from "../components/ItemsCpThe";
+import { motion } from "framer-motion";
 import { sortChrono } from "../src/utils/helpers";
 
 function theatre({ result }: any) {
@@ -12,7 +12,9 @@ function theatre({ result }: any) {
         <SidebarMusique />
       </div>
       <div className="main">
-        <ItemMapperCtd items={spectacles} />
+        {spectacles.map((spectacle: any) => (
+          <ItemsCpThe item={spectacle} key={spectacle.id} />
+        ))}
       </div>
     </div>
   );
@@ -25,7 +27,7 @@ export async function getStaticProps() {
   const result = await response.json();
   return {
     props: { result },
-    revalidate: 20,
+    revalidate: 10,
   };
 }
 

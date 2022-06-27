@@ -1,8 +1,19 @@
+import { itemVariants } from "../src/utils/helpers";
+import { motion } from "framer-motion";
+import VideoPlayer from "./VideoPlayer";
+
 function ItemMapperAlt({ items }: any) {
   return (
     <div>
-      {items.map((item: any) => (
-        <div key={item.title.rendered} className="alt-gridder">
+      {items.map((item: any, index: number) => (
+        <motion.div
+          variants={itemVariants}
+          initial="hidden"
+          animate="visible"
+          custom={(index + 1) * 0.2}
+          key={item.title.rendered}
+          className="alt-gridder"
+        >
           <div className="alt-flexor">
             <div className="alt-imagePart">
               <img
@@ -23,39 +34,24 @@ function ItemMapperAlt({ items }: any) {
                 ></div>
               </div>
             </div>
-
-            {item.acf.youtube ? (
-              <div className="alt-videoPart">
-                <iframe
-                  src={`https://www.youtube.com/embed/${item.acf.youtube}`}
-                  title="YouTube video player"
-                  // @ts-ignore
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
-                ></iframe>
-              </div>
-            ) : null}
-
-            {item.acf.vimeo ? (
-              <div className="alt-videoPart alt-vimeo">
-                <iframe
-                  src={`https://player.vimeo.com/video/${item.acf.vimeo}`}
-                  allow="autoplay; fullscreen; picture-in-picture"
-                  // @ts-ignore
-                  frameBorder="0"
-                  allowFullScreen
-                />
-                <script src="https://player.vimeo.com/api/player.js" defer />
-              </div>
-            ) : null}
             <div className="item-info">
               <div className="item-distribution">{item.acf.distribution}</div>
               <div className="item-label">{item.acf.label}</div>
             </div>
+            {item.acf.video ? (
+              <div className="alt-videoPart">
+                <VideoPlayer url={item.acf.video} />
+              </div>
+            ) : null}
+            {item.acf.mp3 ? (
+              <div>
+                <audio src={item.acf.mp3} controls></audio>
+              </div>
+            ) : null}
           </div>
 
           <hr className="line" />
-        </div>
+        </motion.div>
       ))}
     </div>
   );
