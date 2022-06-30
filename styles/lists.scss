@@ -1,3 +1,18 @@
+.agenda-mainSection {
+  height: 100%;
+  overflow: hidden;
+}
+
+.agendaMain {
+  // background-color: red;
+  height: calc(100% - 212px);
+}
+
+.sidebar-agenda-inner {
+  height: calc(100% - 164px);
+  overflow: hidden;
+}
+
 .agendaItem {
   display: flex;
   flex-direction: row;
@@ -13,6 +28,14 @@
 .textPart {
   width: 50%;
   color: var(--text-color);
+}
+
+.textPart h3 {
+  margin-top: 0;
+}
+
+.textPart .description a {
+  color: var(--light);
 }
 
 .spec-image {
@@ -143,8 +166,14 @@
   padding: 8px 0;
 }
 
+.fhImage {
+  max-width: 100vw;
+  max-height: 100vh;
+}
+
 .imageRow {
   padding: 16px 8px 8px;
+  display: flex;
 }
 
 .item-image-main {
@@ -152,17 +181,28 @@
   max-height: 350px;
 }
 
-.main .oddOrEven:nth-child(odd) .imageRow {
-  transform: rotate(-4deg);
-}
-
-.main .oddOrEven:nth-child(even) .imageRow {
-  transform: rotate(4deg);
-}
-
 .thumbImage {
   max-width: 100px;
   max-height: 100px;
+}
+
+.rotateLeft {
+  transform: rotate(4deg);
+}
+
+.rotateRight {
+  transform: rotate(-8deg);
+}
+
+.mp3Extrait {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.mp3Extrait:active {
+  opacity: 50%;
 }
 
 // ItemMapper CTD ALT

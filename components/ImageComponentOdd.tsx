@@ -24,7 +24,7 @@ interface ImCoProps {
 
 Modal.setAppElement("body");
 
-function ImageComponent({ img }: ImCoProps) {
+function ImageComponentOdd({ img }: ImCoProps) {
   const [modalIsOpen, setIsOpen] = useState(false);
 
   function openModal() {
@@ -38,7 +38,7 @@ function ImageComponent({ img }: ImCoProps) {
   return (
     <div>
       <img
-        className="thumbImage"
+        className="thumbImage rotateLeft"
         src={img}
         alt="aperçu du spectacle"
         onClick={openModal}
@@ -54,4 +54,4 @@ function ImageComponent({ img }: ImCoProps) {
   );
 }
 
-export default ImageComponent;
+export default ImageComponentOdd;

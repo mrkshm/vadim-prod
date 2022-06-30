@@ -7,14 +7,14 @@ function agenda({ agendaSideBarPics, agendaItems }: any) {
   const spectacles = agendaItems.sort(sortChrono);
 
   return (
-    <div className="mainSection">
+    <div className="mainSection agenda-mainSection">
       <div className="sidebar">
         <SidebarAgenda
           img1={agendaSideBarPics.acf.imageUrl1}
           img2={agendaSideBarPics.acf.imageUrl2}
         />
       </div>
-      <div className="main">
+      <div className="main agendaMain">
         {spectacles.map((spectacle: any) => (
           <Agenda key={spectacle.id} spectacle={spectacle} />
         ))}

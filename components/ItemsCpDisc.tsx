@@ -2,21 +2,31 @@ import { itemVariants } from "../src/utils/helpers";
 import { useStore } from "../src/stores/playStore";
 import { motion } from "framer-motion";
 import VideoPlayer from "./VideoPlayer";
+import { PlayCircle } from "phosphor-react";
 
-function ItemMapperAlt({ item, key, albumIndex }: any) {
+function ItemsCpDisc({ item, key, albumIndex }: any) {
   // @ts-ignore
   let tracks = useStore((state) => state.tracks);
+  // @ts-ignore
+  const setPlay = useStore((state) => state.togglePlaying);
+  const setPlaying = (arg: boolean) => setPlay(arg);
 
   // @ts-ignore
   const setActive = useStore((state) => state.setActive);
   const setActiveTrack = (arg: number) => setActive(arg);
 
-  const findSongIndex = (arg: any) => {
-    return tracks.findIndex((track: any) => track.url === arg);
+  const findSongIndex = (songUrl: any) => {
+    return tracks.findIndex((track: any) => track.url === songUrl);
   };
 
-  return (
-    <div>
+  const setTheTrack = (arg: string) => {
+    const trackNumber = findSongIndex(arg);
+    setActiveTrack(trackNumber);
+    setPlaying(true);
+  };
+
+  return tracks ? (
+    <div key={key}>
       <motion.div
         variants={itemVariants}
         initial="hidden"
@@ -55,14 +65,17 @@ function ItemMapperAlt({ item, key, albumIndex }: any) {
             </div>
           ) : null}
           {item.acf.mp3 ? (
-            <div onClick={() => setActiveTrack(findSongIndex(item.acf.mp3))}>
-              <audio src={item.acf.mp3} controls></audio>
+            <div
+              className="mp3Extrait"
+              onClick={() => setTheTrack(item.acf.mp3)}
+            >
+              <PlayCircle size={32} />{" "}
               <div>
-                <button
-                  onClick={() => setActiveTrack(findSongIndex(item.acf.mp3))}
-                >
-                  CLICK
-                </button>
+                {" "}
+                Extrait{" "}
+                {tracks[findSongIndex(item.acf.mp3)]
+                  ? ` : ${tracks[findSongIndex(item.acf.mp3)].titre}`
+                  : null}
               </div>
             </div>
           ) : null}
@@ -71,7 +84,7 @@ function ItemMapperAlt({ item, key, albumIndex }: any) {
         <hr className="line" />
       </motion.div>
     </div>
-  );
+  ) : null;
 }
 
-export default ItemMapperAlt;
+export default ItemsCpDisc;

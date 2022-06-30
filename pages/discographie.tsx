@@ -1,9 +1,9 @@
 import SidebarMusique from "../components/SidebarMusique";
-import ItemMapperAlt from "../components/ItemMapperAlt";
+import ItemsCpDisc from "../components/ItemsCpDisc";
 import { sortInvChrono } from "../src/utils/helpers";
 
 function discographie({ result }: any) {
-  const films = result.sort(sortInvChrono);
+  const albums = result.sort(sortInvChrono);
 
   return (
     <div className="mainSection">
@@ -11,7 +11,9 @@ function discographie({ result }: any) {
         <SidebarMusique />
       </div>
       <div className="main">
-        <ItemMapperAlt items={films} />
+        {albums.map((album: any, index: number) => (
+          <ItemsCpDisc item={album} key={album.id} albumIndex={index} />
+        ))}
       </div>
     </div>
   );

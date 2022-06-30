@@ -5,3 +5,10 @@ export interface Props {
 export interface NavProps {
   currentPage: string;
 }
+
+export interface Track {
+  titre: string;
+  spectacle: string;
+  url: string;
+  imageUrl: string;
+}

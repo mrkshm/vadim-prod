@@ -3,7 +3,8 @@ import { motion, useAnimation } from "framer-motion";
 import VideoPlayer from "./VideoPlayer";
 import Link from "next/link";
 import { useInView } from "react-intersection-observer";
-import ImageComponent from "./ImageComponent";
+import ImageComponentOdd from "./ImageComponentOdd";
+import ImageComponentEven from "./ImageComponentEven";
 
 function ItemsCpThe({ item, key }: any) {
   const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -65,16 +66,16 @@ function ItemsCpThe({ item, key }: any) {
 
               <div className="imageRow">
                 {item.acf.imageUrl ? (
-                  <ImageComponent img={item.acf.imageUrl} />
+                  <ImageComponentOdd img={item.acf.imageUrl} />
                 ) : null}
                 {item.acf.imageUrl2 ? (
-                  <ImageComponent img={item.acf.imageUrl2} />
+                  <ImageComponentEven img={item.acf.imageUrl2} />
                 ) : null}
                 {item.acf.imageUrl3 ? (
-                  <ImageComponent img={item.acf.imageUrl3} />
+                  <ImageComponentOdd img={item.acf.imageUrl3} />
                 ) : null}
                 {item.acf.imageUrl4 ? (
-                  <ImageComponent img={item.acf.imageUrl4} />
+                  <ImageComponentEven img={item.acf.imageUrl4} />
                 ) : null}
               </div>
             </div>

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import VideoPlayer from "./VideoPlayer";
 
 function Agenda({ spectacle, key }: any) {
@@ -19,11 +20,11 @@ function Agenda({ spectacle, key }: any) {
         <div className="textPart">
           {/* Title */}
           {spectacle.acf.lien_spectacle ? (
-            <h3 className="spec-title">
-              <a href={spectacle.acf.lien_spectacle}>
-                {spectacle.title.rendered}
+            <Link href={spectacle.acf.lien_spectacle}>
+              <a>
+                <h3 className="spec-title">{spectacle.title.rendered}</h3>
               </a>
-            </h3>
+            </Link>
           ) : (
             <h3
               className="spec-title"
@@ -44,16 +45,16 @@ function Agenda({ spectacle, key }: any) {
           ) : null}
 
           {/* Date and time */}
-          {spectacle.acf.heure ? (
+          {/* {spectacle.acf.heure ? (
             <div className="spec-date">
               {spectacle.acf.date}, {spectacle.acf.heure}
             </div>
           ) : (
             <div className="spec-date">{spectacle.acf.date}</div>
-          )}
+          )} */}
 
           {/* Place */}
-          {spectacle.acf.lien_theatre ? (
+          {/* {spectacle.acf.lien_theatre ? (
             <div className="spec-place">
               <a href={spectacle.acf.lien_theatre}>
                 {spectacle.acf.salle_ville}
@@ -61,7 +62,7 @@ function Agenda({ spectacle, key }: any) {
             </div>
           ) : (
             <div className="spec-place">{spectacle.acf.salle_ville}</div>
-          )}
+          )} */}
 
           {/* Video, if any */}
           <div className="spec-video">

@@ -12,48 +12,29 @@ interface Track {
   imageUrl: string;
 }
 
-let tracks = [
-  {
-    id: 1,
-    titre: "Ouverture",
-    spectacle: "Don Juan",
-    url: "https://musards.fr/wp/vadimsher/wp-content/uploads/sites/2/2022/06/Don_Juan_Ouverture.mp3",
-    imageUrl:
-      "https://musards.fr/wp/vadimsher/wp-content/uploads/sites/2/2022/06/don_juan.jpg",
-  },
-  {
-    id: 2,
-    titre: "Pot pourri",
-    spectacle: "Don Juan",
-    url: "https://musards.fr/wp/vadimsher/wp-content/uploads/sites/2/2022/06/Don_Juan_Pot_pourri.mp3",
-    imageUrl:
-      "https://musards.fr/wp/vadimsher/wp-content/uploads/sites/2/2022/06/don_juan.jpg",
-  },
-];
+// const getTracks = async () => {
+//   const rawRes = await fetch(
+//     "http://musards.fr/wp/vadimsher/wp-json/wp/v2/posts?categories=10&per_page=30"
+//   );
+//   const json = await rawRes.json();
+//   const tempTracks: Track[] = [];
+//   json.forEach((track: any) => {
+//     const newTrack: Track = {
+//       id: track.id,
+//       titre: track.acf.titre,
+//       spectacle: track.acf.spectacle,
+//       url: track.acf.url,
+//       imageUrl: track.acf.imageUrl,
+//     };
+//     tempTracks.push(newTrack);
+//   });
+//   tracks = tempTracks;
+// };
 
-const getTracks = async () => {
-  const rawRes = await fetch(
-    "http://musards.fr/wp/vadimsher/wp-json/wp/v2/posts?categories=10&per_page=30"
-  );
-  const json = await rawRes.json();
-  const tempTracks: Track[] = [];
-  json.forEach((track: any) => {
-    const newTrack: Track = {
-      id: track.id,
-      titre: track.acf.titre,
-      spectacle: track.acf.spectacle,
-      url: track.acf.url,
-      imageUrl: track.acf.imageUrl,
-    };
-    tempTracks.push(newTrack);
-  });
-  tracks = tempTracks;
-};
+// getTracks();
 
-getTracks();
-
-function PlayerBar() {
-  const [activeTrack, setActiveTrack] = useState(0);
+function PlayerBar2() {
+  // const [activeTrack, setActiveTrack] = useState(0);
   const [isSeeking, setIsSeeking] = useState(false);
   const [index, setIndex] = useState(0);
   const [seek, setSeek] = useState(0.0);
@@ -61,13 +42,21 @@ function PlayerBar() {
   const [volume, setVolume] = useState(1);
   const soundRef = useRef(null);
 
-  const [playing, setPlaying] = useState(false);
+  let tracks = useStore((state) => state.tracks);
+  const hydrateTracks = useStore((state) => state.fetch);
+  hydrateTracks(
+    "http://musards.fr/wp/vadimsher/wp-json/wp/v2/posts?categories=10&per_page=30"
+  );
 
-  // const playing = useStore((state) => state.playing);
-  // const setPlay = useStore((state) => state.setPlaying);
-  // const setPlaying = (val: boolean) => {
-  //   setPlay(val);
-  // };
+  const activeTrack = useStore((state) => state.activeTrack);
+  const setActive = useStore((state) => state.setActive);
+  const setActiveTrack = (arg: number) => setActive(arg);
+
+  const playing = useStore((state) => state.playing);
+  const setPlay = useStore((state) => state.togglePlaying);
+  const setPlaying = (arg: boolean) => setPlay(arg);
+
+  // const [playing, setPlaying] = useState(false);
 
   const displayDuration = useMemo(() => {
     const minutes = Math.floor(duration / 60);
@@ -123,6 +112,8 @@ function PlayerBar() {
 
   const nextTrack = () => {
     if (activeTrack === tracks.length - 1) {
+      console.log(activeTrack);
+
       setActiveTrack(0);
     } else {
       setActiveTrack(activeTrack + 1);
@@ -147,18 +138,20 @@ function PlayerBar() {
     soundRef.current.seek(e);
   };
 
-  console.log("active track is", activeTrack);
-
   return (
     <div className="playerBar">
       <div className="trackInfo">
         <div className="trackImage">
-          <Image
-            className="trackPic"
-            src={tracks[activeTrack].imageUrl}
-            width="50px"
-            height="50px"
-          />
+          {tracks[activeTrack].imageUrl ? (
+            <Image
+              className="trackPic"
+              src={tracks[activeTrack].imageUrl}
+              width="50px"
+              height="50px"
+            />
+          ) : (
+            "image"
+          )}
         </div>
         <div className="">
           <div className="trackName">{tracks[activeTrack].titre}</div>
@@ -187,6 +180,9 @@ function PlayerBar() {
                   <Play
                     onClick={() => {
                       setPlayState(true);
+                      console.log("len");
+
+                      console.log("len is", tracks.length);
                       handlePlay();
                     }}
                   />
@@ -214,7 +210,7 @@ function PlayerBar() {
         </div>
       </div>
       <div className="volumeSection">
-        <div>Volume: {displayVolume}</div>
+        <div>Volumes: {displayVolume}</div>
         <label className="volSlider">
           <input
             type="range"
@@ -230,4 +226,4 @@ function PlayerBar() {
   );
 }
 
-export default PlayerBar;
+export default PlayerBar2;

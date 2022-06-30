@@ -1,7 +1,7 @@
 import { Props } from "../src/types";
 import { useRouter } from "next/router";
 import Navbar from "./Navbar";
-import PlayerBar from "./PlayerBar";
+import PlayerBar2 from "./PlayerBar2";
 import { useMemo } from "react";
 
 function Layout({ children }: Props) {
@@ -22,7 +22,7 @@ function Layout({ children }: Props) {
         <div>
           <main>{children}</main>
         </div>
-        <PlayerBar />
+        <PlayerBar2 />
       </div>
     </div>
   );
