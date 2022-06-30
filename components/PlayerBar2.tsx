@@ -41,18 +41,23 @@ function PlayerBar2() {
   const [duration, setDuration] = useState(0.0);
   const [volume, setVolume] = useState(1);
   const soundRef = useRef(null);
-
+  // @ts-ignore
   let tracks = useStore((state) => state.tracks);
+
+  // @ts-ignore
   const hydrateTracks = useStore((state) => state.fetch);
   hydrateTracks(
     "http://musards.fr/wp/vadimsher/wp-json/wp/v2/posts?categories=10&per_page=30"
   );
-
+  // @ts-ignore
   const activeTrack = useStore((state) => state.activeTrack);
+  // @ts-ignore
   const setActive = useStore((state) => state.setActive);
   const setActiveTrack = (arg: number) => setActive(arg);
 
+  // @ts-ignore
   const playing = useStore((state) => state.playing);
+  // @ts-ignore
   const setPlay = useStore((state) => state.togglePlaying);
   const setPlaying = (arg: boolean) => setPlay(arg);
 
