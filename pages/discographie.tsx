@@ -1,9 +1,37 @@
 import SidebarMusique from "../components/SidebarMusique";
 import ItemsCpDisc from "../components/ItemsCpDisc";
 import { sortInvChrono } from "../src/utils/helpers";
+import { useStore } from "../src/stores/playStore";
+import { useEffect } from "react";
 
 function discographie({ result }: any) {
   const albums = result.sort(sortInvChrono);
+
+  // @ts-ignore
+  const populate = useStore((state) => state.populateStore);
+  const populateStore = (nuTracks: any) => populate(nuTracks);
+
+  useEffect(() => {
+    const tempTracks: any = [];
+
+    const fetchData = async () => {
+      const response = await fetch(
+        "http://musards.fr/wp/vadimsher/wp-json/wp/v2/posts?categories=10&per_page=30"
+      );
+      const res = await response.json();
+
+      res.forEach((track: any) => {
+        const tempTrack = {
+          id: track.id,
+          titre: track.acf.titre,
+          spectacle: track.acf.spectacle,
+          url: track.acf.url,
+          imageUrl: track.acf.imageUrl,
+        };
+        tempTracks.push(tempTrack);
+      });
+    };
+  }, []);
 
   return (
     <div className="mainSection">

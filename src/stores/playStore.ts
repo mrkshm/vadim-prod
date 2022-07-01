@@ -22,86 +22,6 @@ export const useStore = create((set) => ({
       imageUrl:
         "https://musards.fr/wp/vadimsher/wp-content/uploads/sites/2/2022/06/don_juan.jpg",
     },
-    {
-      id: 3,
-      titre: "La Coupe écrasée",
-      spectacle: "Le Degré 41",
-      url: "https://musards.fr/wp/vadimsher/wp-content/uploads/sites/2/2022/06/Degre_41_la_coupe_ecrasee.mp3",
-      imageUrl:
-        "https://musards.fr/wp/vadimsher/wp-content/uploads/sites/2/2022/06/degre_41.jpeg",
-    },
-    {
-      id: 4,
-      titre: "Le Manteau",
-      spectacle: "Le Degré 41",
-      url: "https://musards.fr/wp/vadimsher/wp-content/uploads/sites/2/2022/06/Degre_41_le_manteau.mp3",
-      imageUrl:
-        "https://musards.fr/wp/vadimsher/wp-content/uploads/sites/2/2022/06/degre_41.jpeg",
-    },
-    {
-      id: 5,
-      titre: "Au kabak",
-      spectacle: "Le Kaddish",
-      url: "https://musards.fr/wp/vadimsher/wp-content/uploads/sites/2/2022/06/kaddish_au_kabak.mp3",
-      imageUrl:
-        "https://musards.fr/wp/vadimsher/wp-content/uploads/sites/2/2022/06/le_kaddish.jpg",
-    },
-    {
-      id: 6,
-      titre: "Chorale",
-      spectacle: "Le Kaddish",
-      url: "https://musards.fr/wp/vadimsher/wp-content/uploads/sites/2/2022/06/kaddish_Chorale.mp3",
-      imageUrl:
-        "https://musards.fr/wp/vadimsher/wp-content/uploads/sites/2/2022/06/le_kaddish.jpg",
-    },
-    {
-      id: 7,
-      titre: "Sabbat",
-      spectacle: "Le Kaddish",
-      url: "https://musards.fr/wp/vadimsher/wp-content/uploads/sites/2/2022/06/kaddish_Sabbat.mp3",
-      imageUrl:
-        "https://musards.fr/wp/vadimsher/wp-content/uploads/sites/2/2022/06/le_kaddish.jpg",
-    },
-    {
-      id: 8,
-      titre: "Mécanique de Mme Diss",
-      spectacle: "Les Serpents",
-      url: "https://musards.fr/wp/vadimsher/wp-content/uploads/sites/2/2022/06/Serpents_Mecanique_de_Mme_Diss.mp3",
-      imageUrl:
-        "https://musards.fr/wp/vadimsher/wp-content/uploads/sites/2/2022/06/serpents.jpg",
-    },
-    {
-      id: 9,
-      titre: "Sortilège de France",
-      spectacle: "Les Serpents",
-      url: "https://musards.fr/wp/vadimsher/wp-content/uploads/sites/2/2022/06/Serpents_Sortilege_de_France.mp3",
-      imageUrl:
-        "https://musards.fr/wp/vadimsher/wp-content/uploads/sites/2/2022/06/serpents.jpg",
-    },
-    {
-      id: 10,
-      titre: "La fuite",
-      spectacle: "Varietà",
-      url: "https://musards.fr/wp/vadimsher/wp-content/uploads/sites/2/2022/06/Varieta_La_fuite.mp3",
-      imageUrl:
-        "https://musards.fr/wp/vadimsher/wp-content/uploads/sites/2/2022/06/varieta.jpg",
-    },
-    {
-      id: 11,
-      titre: "En revenant des noces",
-      spectacle: "En revenant des noces",
-      url: "https://musards.fr/wp/vadimsher/wp-content/uploads/sites/2/2022/06/EnRevenantDesNoces.mp3",
-      imageUrl:
-        "https://musards.fr/wp/vadimsher/wp-content/uploads/sites/2/2022/06/Disque_EnRevenantDesNoces.png",
-    },
-    {
-      id: 12,
-      titre: "Beata Viscera",
-      spectacle: "Worldes Blis",
-      url: "https://musards.fr/wp/vadimsher/wp-content/uploads/sites/2/2022/06/WoldesBlis_BeataViscera.mp3",
-      imageUrl:
-        "https://musards.fr/wp/vadimsher/wp-content/uploads/sites/2/2022/06/WorldesBlis-Pochette-scaled.jpg",
-    },
   ],
   fetch: async (hydrator: string) => {
     const response = await fetch(hydrator);
@@ -121,4 +41,5 @@ export const useStore = create((set) => ({
   },
   activeTrack: 0,
   setActive: (arg: number) => set(() => ({ activeTrack: arg })),
+  populateStore: (newTracks: any) => set((state) => ({ tracks: newTracks })),
 }));
