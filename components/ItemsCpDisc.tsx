@@ -1,8 +1,10 @@
 import { itemVariants } from "../src/utils/helpers";
 import { useStore } from "../src/stores/playStore";
-import { motion } from "framer-motion";
 import VideoPlayer from "./VideoPlayer";
 import { PlayCircle } from "phosphor-react";
+import { useInView } from "react-intersection-observer";
+import { motion, useAnimation } from "framer-motion";
+import { useState, useEffect, useMemo } from "react";
 
 function ItemsCpDisc({ item, key, albumIndex }: any) {
   // @ts-ignore
@@ -15,6 +17,27 @@ function ItemsCpDisc({ item, key, albumIndex }: any) {
   const setActive = useStore((state) => state.setActive);
   const setActiveTrack = (arg: number) => setActive(arg);
 
+  const { ref, inView } = useInView();
+  const animation = useAnimation();
+
+  useEffect(() => {
+    if (inView) {
+      animation.start({
+        opacity: 1,
+        x: 0,
+        transition: {
+          type: "spring",
+          duration: 1.2,
+          bounce: 0,
+        },
+      });
+    }
+
+    if (!inView) {
+      animation.start({ x: "-100vw", opacity: 0 });
+    }
+  }, [inView, ref]);
+
   const findSongIndex = (songUrl: any) => {
     return tracks.findIndex((track: any) => track.url === songUrl);
   };
@@ -26,15 +49,8 @@ function ItemsCpDisc({ item, key, albumIndex }: any) {
   };
 
   return tracks ? (
-    <div key={key}>
-      <motion.div
-        variants={itemVariants}
-        initial="hidden"
-        animate="visible"
-        custom={(albumIndex + 1) * 0.2}
-        key={item.title.rendered}
-        className="alt-gridder"
-      >
+    <div key={key} ref={ref}>
+      <motion.div animate={animation} className="alt-gridder">
         <div className="alt-flexor">
           <div className="alt-imagePart">
             <img

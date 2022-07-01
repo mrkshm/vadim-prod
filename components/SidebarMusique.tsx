@@ -112,7 +112,7 @@ function SidebarMusique() {
   }, [currentPage]);
 
   return (
-    <div>
+    <div className="sidebar-music-inner">
       <div className="sidebar-title">{pageTitle}</div>
       <div className="music-sbar-menu">
         <ul className="music-menu-ul">

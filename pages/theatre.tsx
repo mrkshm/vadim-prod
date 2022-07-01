@@ -11,7 +11,7 @@ function theatre({ result }: any) {
       <div className="sidebar">
         <SidebarMusique />
       </div>
-      <div className="main">
+      <div className="main theatreMain">
         {spectacles.map((spectacle: any) => (
           <ItemsCpThe item={spectacle} key={spectacle.id} />
         ))}

@@ -105,12 +105,29 @@ function ItemsCpThe({ item, key }: any) {
                 ) : null}
               </div>
 
+              <div className="distribution">{item.acf.distribution}</div>
+
               <div
                 dangerouslySetInnerHTML={{
                   __html: item.content.rendered,
                 }}
                 className="item-description"
               ></div>
+
+              <div className="imageRow">
+                {item.acf.imageUrl ? (
+                  <ImageComponentOdd img={item.acf.imageUrl} />
+                ) : null}
+                {item.acf.imageUrl2 ? (
+                  <ImageComponentEven img={item.acf.imageUrl2} />
+                ) : null}
+                {item.acf.imageUrl3 ? (
+                  <ImageComponentOdd img={item.acf.imageUrl3} />
+                ) : null}
+                {item.acf.imageUrl4 ? (
+                  <ImageComponentEven img={item.acf.imageUrl4} />
+                ) : null}
+              </div>
             </div>
           </div>
         )}

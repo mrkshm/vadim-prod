@@ -2,10 +2,14 @@
   .mainSection {
     display: grid;
     height: calc(100vh - 70px);
+    overflow: hidden;
     grid-template-columns: 3fr 7fr;
     grid-template-columns: 3fr 7fr;
   }
 
+  .theatreMain {
+    overflow: auto;
+  }
   .sidebar {
     padding: 16px;
   }

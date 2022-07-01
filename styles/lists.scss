@@ -8,9 +8,24 @@
   height: calc(100% - 212px);
 }
 
-.sidebar-agenda-inner {
-  height: calc(100% - 164px);
+.theatreMain {
+  height: calc(100% - 192px);
   overflow: hidden;
+}
+
+.sidebar-agenda-inner {
+  height: calc(100% - 144px);
+}
+
+.sidebar-music-inner {
+  height: calc(100% - 144px);
+  overflow: auto;
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar-music-inner::-webkit-scrollbar {
+  display: none;
 }
 
 .agendaItem {
@@ -172,7 +187,7 @@
 }
 
 .imageRow {
-  padding: 16px 8px 8px;
+  padding: 24px 8px 8px;
   display: flex;
 }
 
