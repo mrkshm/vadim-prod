@@ -4,7 +4,7 @@ import { sortInvChrono } from "../src/utils/helpers";
 import { useStore } from "../src/stores/playStore";
 import { useEffect } from "react";
 
-function discographie({ result }: any) {
+function Discographie({ result }: any) {
   const albums = result.sort(sortInvChrono);
 
   // @ts-ignore
@@ -59,4 +59,4 @@ export async function getStaticProps() {
   };
 }
 
-export default discographie;
+export default Discographie;
