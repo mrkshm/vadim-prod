@@ -11,6 +11,12 @@ function Discographie({ result }: any) {
   const populate = useStore((state) => state.populateStore);
   const populateStore = (nuTracks: any) => populate(nuTracks);
 
+  const fetchData = async () => {
+    const response = await fetch(
+      "http://musards.fr/wp/vadimsher/wp-json/wp/v2/posts?categories=10&per_page=30"
+    );
+    const res = await response.json();
+
   useEffect(() => {
     const tempTracks: any = [];
 
@@ -30,6 +36,8 @@ function Discographie({ result }: any) {
         };
         tempTracks.push(tempTrack);
       });
+
+      populateStore(tempTracks);
     };
 
     fetchData();
