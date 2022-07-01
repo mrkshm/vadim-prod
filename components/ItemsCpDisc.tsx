@@ -17,8 +17,9 @@ function ItemsCpDisc({ item, key, albumIndex }: any) {
   const setActive = useStore((state) => state.setActive);
   const setActiveTrack = (arg: number) => setActive(arg);
 
+  // @ts-ignore
   const fetchit = useStore((state) => state.fetch);
-  const fetchit2 = useStore((state) => fetch);
+  const fetchit2 = useStore(() => fetch);
 
   const { ref, inView } = useInView();
   const animation = useAnimation();
@@ -105,7 +106,7 @@ function ItemsCpDisc({ item, key, albumIndex }: any) {
               </button>
               <button onClick={setActiveTrack(1)}>switch song</button>
               <button onClick={fetchit}>fetchit</button>
-              <button onClick={fetchit2}>fetchit2</button>
+              <button onClick={() => fetchit2}>fetchit2</button>
 
               <div
                 className="mp3Extrait"
