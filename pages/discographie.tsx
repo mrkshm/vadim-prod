@@ -31,6 +31,8 @@ function Discographie({ result }: any) {
         tempTracks.push(tempTrack);
       });
     };
+
+    fetchData();
   }, []);
 
   return (
