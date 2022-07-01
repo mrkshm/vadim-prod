@@ -4,7 +4,7 @@ import VideoPlayer from "./VideoPlayer";
 import { PlayCircle } from "phosphor-react";
 import { useInView } from "react-intersection-observer";
 import { motion, useAnimation } from "framer-motion";
-import { useState, useEffect, useMemo } from "react";
+import { useEffect } from "react";
 
 function ItemsCpDisc({ item, key, albumIndex }: any) {
   // @ts-ignore
@@ -81,17 +81,27 @@ function ItemsCpDisc({ item, key, albumIndex }: any) {
             </div>
           ) : null}
           {item.acf.mp3 ? (
-            <div
-              className="mp3Extrait"
-              onClick={() => setTheTrack(item.acf.mp3)}
-            >
-              <PlayCircle size={32} />{" "}
-              <div>
-                {" "}
-                Extrait{" "}
-                {tracks[findSongIndex(item.acf.mp3)]
-                  ? ` : ${tracks[findSongIndex(item.acf.mp3)].titre}`
-                  : null}
+            <div>
+              <button onClick={() => console.log(item.acf.mp3)}>
+                Click to log mp3
+              </button>
+              <button onClick={() => console.log(tracks)}>
+                Click to log tracks
+              </button>
+              <button>Click to log trackIndex</button>
+
+              <div
+                className="mp3Extrait"
+                onClick={() => setTheTrack(item.acf.mp3)}
+              >
+                <PlayCircle size={32} />{" "}
+                <div>
+                  {" "}
+                  Extrait{" "}
+                  {tracks[findSongIndex(item.acf.mp3)]
+                    ? ` : ${tracks[findSongIndex(item.acf.mp3)].titre}`
+                    : null}
+                </div>
               </div>
             </div>
           ) : null}
