@@ -315,6 +315,20 @@ modal-dialog {
     opacity: 80%;
   }
 
+  .alting {
+    display: flex;
+  }
+
+  .alting figcaption {
+    margin: 12px 0;
+    width: 60%;
+  }
+
+  .cv {
+    font-size: 24px;
+    width: 40%;
+  }
+
   .music-sbar-menu {
     display: inline;
   }
@@ -344,9 +358,6 @@ modal-dialog {
     margin-right: 37%;
   }
   .li-c {
-    // padding-right: 8px;
-    // animation-delay: 5s;
-    // animation-duration: 17s;
     color: white;
   }
   .li-t {
@@ -382,5 +393,15 @@ modal-dialog {
 
   .stripe {
     display: inline;
+  }
+}
+
+@media (min-width: 800px) {
+  .alting {
+    flex-direction: column;
+  }
+
+  .cv {
+    width: 100%;
   }
 }

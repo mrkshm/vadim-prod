@@ -1,4 +1,4 @@
-@media (min-width: 768px) {
+@media (min-width: 780px) {
   .mainSection {
     display: grid;
     height: calc(100vh - 70px);
@@ -27,5 +27,167 @@
 
   .musique-citation {
     max-width: 260px;
+  }
+
+  .cv {
+    margin: 16px 10% 0 0;
+  }
+
+  .agendaItem {
+    flex-direction: row;
+  }
+
+  .affiche {
+    width: 50%;
+  }
+
+  .textPart {
+    width: 50%;
+  }
+
+  .spec-video {
+    width: 60%;
+    padding-top: 52px;
+  }
+
+  .item-line {
+    flex-direction: row;
+    gap: 8px;
+  }
+
+  .video-part {
+    width: 50%;
+    padding: 16px;
+  }
+
+  .text-part {
+    width: 50%;
+  }
+
+  .item-info {
+    width: 80%;
+  }
+
+  .mp3Extrait {
+    display: flex;
+  }
+
+  .mobileMp3 {
+    display: none;
+  }
+
+  .alt-textTitle {
+    font-family: var(--font-title);
+    color: var(--midnight);
+    font-size: 32px;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    padding: 0;
+    margin: 0;
+    line-height: 1;
+  }
+
+  .alt-flexor {
+    display: grid;
+    grid-template-columns: 40% 1fr;
+    width: 100%;
+    padding: 0px 0 0 0;
+    margin: 0;
+  }
+
+  .alt-imagePart {
+    width: 100%;
+  }
+
+  .alt-textPart {
+    width: 95%;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+
+  .alt-itemImage {
+    padding-top: 4px;
+    width: 90%;
+  }
+
+  .alt-description {
+    line-height: 1.5;
+    font-size: 16px;
+  }
+
+  .alt-videoPart {
+    max-height: 120px;
+    padding-top: 0;
+  }
+
+  .alt-videoPart iframe {
+    width: 150px;
+    height: 100px;
+    margin-top: 4px;
+  }
+
+  .playerBar {
+    display: flex;
+  }
+
+  .spec-image {
+    width: 80%;
+    max-height: 80%;
+    object-fit: cover;
+    object-position: left top;
+  }
+
+  .ctd-itemImage {
+    max-height: 160px;
+    max-width: 160px;
+    object-fit: cover;
+  }
+
+  .ctd-textPart {
+    grid-area: textPart;
+    padding: 0 16px;
+  }
+
+  .ctd-videoPart {
+    grid-area: videoPart;
+  }
+
+  .ctd-imagePart {
+    grid-area: imagePart;
+  }
+  .ctd-distribution {
+    font-weight: 300;
+  }
+  .ctd-gridder {
+    padding: 16px 0;
+    display: grid;
+    grid-template-rows: 1fr 20px;
+    gap: 12px;
+  }
+
+  .ctd-vimeo {
+    margin-top: 0px;
+  }
+
+  .ctd-gridder:nth-child(odd) {
+    grid-template-columns: 1fr 1fr 4fr;
+    grid-template-areas:
+      "imagePart videoPart textPart"
+      "line line line";
+  }
+
+  .ctd-gridder:nth-child(even) {
+    grid-template-columns: 4fr 1fr 1fr;
+    grid-template-areas:
+      "textPart videoPart imagePart"
+      "line line line";
+  }
+
+  .ctd-gridder:last-child .line {
+    display: none;
   }
 }

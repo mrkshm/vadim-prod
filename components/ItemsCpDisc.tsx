@@ -81,17 +81,22 @@ function ItemsCpDisc({ item, key, albumIndex }: any) {
             </div>
           ) : null}
           {item.acf.mp3 ? (
-            <div
-              className="mp3Extrait"
-              onClick={() => setTheTrack(item.acf.mp3)}
-            >
-              <PlayCircle size={32} />{" "}
-              <div>
-                {" "}
-                Extrait{" "}
-                {tracks[findSongIndex(item.acf.mp3)]
-                  ? ` : ${tracks[findSongIndex(item.acf.mp3)].titre}`
-                  : null}
+            <div>
+              <div
+                className="mp3Extrait"
+                onClick={() => setTheTrack(item.acf.mp3)}
+              >
+                <PlayCircle size={32} />{" "}
+                <div>
+                  {" "}
+                  Extrait{" "}
+                  {tracks[findSongIndex(item.acf.mp3)]
+                    ? ` : ${tracks[findSongIndex(item.acf.mp3)].titre}`
+                    : null}
+                </div>
+              </div>
+              <div className="mobileMp3">
+                <audio controls={true} src={item.acf.mp3} />
               </div>
             </div>
           ) : null}

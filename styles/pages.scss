@@ -1,6 +1,5 @@
 .mainSection {
   padding-top: 68px;
-
   display: flex;
   flex-direction: column;
 }
@@ -8,7 +7,11 @@
 .sidebar {
   padding: 0 8px;
   background-color: var(--dark);
-  //   overflow: hidden;
+  overflow: auto;
+}
+
+.sidebar::-webkit-scrollbar {
+  display: none;
 }
 
 .main {
@@ -136,8 +139,9 @@ figure {
   background-color: var(--light);
   padding: 16px;
   border-radius: 4px;
-  margin: 16px 100px 0 0;
+  margin: 16px 0px 0 0;
   justify-content: center;
+  width: auto;
 }
 
 .cv:hover {

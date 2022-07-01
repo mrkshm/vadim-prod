@@ -4,13 +4,12 @@
 }
 
 .agendaMain {
-  // background-color: red;
-  height: calc(100% - 212px);
+  height: 100%;
 }
 
 .theatreMain {
-  height: calc(100% - 192px);
-  overflow: hidden;
+  height: calc(100%);
+  overflow: auto;
 }
 
 .sidebar-agenda-inner {
@@ -18,7 +17,7 @@
 }
 
 .sidebar-music-inner {
-  height: calc(100% - 144px);
+  height: 100%;
   overflow: auto;
   margin: 0;
   padding: 0;
@@ -30,18 +29,18 @@
 
 .agendaItem {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   gap: 8px;
   align-items: flex-start;
   max-width: 100%;
 }
 
 .affiche {
-  width: 50%;
+  width: 100%;
 }
 
 .textPart {
-  width: 50%;
+  width: 100%;
   color: var(--text-color);
 }
 
@@ -81,7 +80,7 @@
 }
 
 .spec-video {
-  width: 60%;
+  width: 100%;
   padding-top: 52px;
 }
 
@@ -95,74 +94,6 @@
   max-width: 200px;
 }
 
-@media (min-width: 768px) {
-  .spec-image {
-    width: 80%;
-    max-height: 80%;
-    object-fit: cover;
-    object-position: left top;
-  }
-
-  .ctd-itemImage {
-    max-height: 160px;
-    max-width: 160px;
-    object-fit: cover;
-  }
-
-  .vimeo {
-    margin-left: 0;
-  }
-
-  .ctd-textPart {
-    grid-area: textPart;
-    padding: 0 16px;
-  }
-
-  .ctd-videoPart {
-    grid-area: videoPart;
-  }
-
-  .ctd-imagePart {
-    grid-area: imagePart;
-  }
-  .ctd-distribution {
-    font-weight: 300;
-  }
-  .ctd-gridder {
-    padding: 16px 0;
-    display: grid;
-    grid-template-rows: 1fr 20px;
-    gap: 12px;
-  }
-
-  .ctd-vimeo {
-    margin-top: 0px;
-  }
-
-  .ctd-gridder:nth-child(odd) {
-    grid-template-columns: 1fr 1fr 4fr;
-    grid-template-areas:
-      "imagePart videoPart textPart"
-      "line line line";
-  }
-
-  //   .ctd-gridder:nth-child(odd) .ctd-textPart {
-  //     align-self: start;
-  //   }
-
-  .ctd-gridder:nth-child(even) {
-    grid-template-columns: 4fr 1fr 1fr;
-    grid-template-areas:
-      "textPart videoPart imagePart"
-      "line line line";
-  }
-
-  .ctd-gridder:last-child .line {
-    display: none;
-  }
-}
-
-// ItemMapper ALT
 .alt-gridder {
   color: var(--midnight);
 }
@@ -173,7 +104,7 @@
 
 .item-info {
   padding: 0;
-  width: 80%;
+  width: 100%;
   font-size: 14px;
 }
 
@@ -189,6 +120,8 @@
 .imageRow {
   padding: 24px 8px 8px;
   display: flex;
+  width: 100%;
+  overflow: auto;
 }
 
 .item-image-main {
@@ -210,7 +143,7 @@
 }
 
 .mp3Extrait {
-  display: flex;
+  display: none;
   align-items: center;
   gap: 8px;
   cursor: pointer;
@@ -218,6 +151,19 @@
 
 .mp3Extrait:active {
   opacity: 50%;
+}
+
+.mobileMp3 {
+  padding-top: 8px;
+  width: 100%;
+}
+
+.mobileMp3 audio {
+  width: 90%;
+}
+
+.alt-videoPart {
+  padding-top: 16px;
 }
 
 // ItemMapper CTD ALT
@@ -233,89 +179,4 @@
 
 .ReactModal__Overlay--before-close {
   opacity: 0;
-}
-
-@media (min-width: 768px) {
-  .alt-textTitle {
-    font-family: var(--font-title);
-    color: var(--midnight);
-    font-size: 32px;
-    font-weight: 400;
-    letter-spacing: 0.02em;
-    padding: 0;
-    margin: 0;
-    line-height: 1;
-  }
-
-  .alt-flexor {
-    display: grid;
-    grid-template-columns: 40% 1fr;
-    width: 100%;
-    padding: 0px 0 0 0;
-    margin: 0;
-  }
-
-  .co-alt-flexor {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    width: 100%;
-    padding: 0px 0 0 0;
-    margin: 0;
-  }
-
-  .co-alt-videoPart iframe {
-    width: 90%;
-    height: 270px;
-  }
-
-  .ctd-alt-gridder {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    width: 100%;
-  }
-
-  .ctd-alt-videoPart iframe {
-    display: block;
-    width: 500px;
-    height: 500px;
-  }
-
-  .alt-imagePart {
-    width: 100%;
-  }
-
-  .alt-textPart {
-    width: 95%;
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-  }
-
-  .alt-itemImage {
-    padding-top: 4px;
-    width: 90%;
-    // rotate: 2deg;
-  }
-
-  .alt-description {
-    line-height: 1.5;
-    font-size: 16px;
-  }
-
-  .alt-videoPart {
-    max-height: 120px;
-  }
-  .alt-videoPart iframe {
-    // width: 60%;
-    width: 150px;
-    height: 100px;
-    margin-top: 16px;
-  }
-
-  // .alt-gridder:nth-child(even) .alt-itemImage {
-  //   rotate: -2deg;
-  // }
 }

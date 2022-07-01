@@ -132,12 +132,13 @@
 .item-line {
   width: 100%;
   display: flex;
+  flex-direction: column;
   gap: 8px;
 }
 
 .video-part {
-  width: 50%;
-  padding: 16px;
+  width: 100%;
+  padding: 16px 0;
 }
 
 .text-part {
@@ -170,11 +171,5 @@
 }
 
 .text-part {
-  width: 50%;
-}
-
-@media (min-width: 768px) {
-  .playerBar {
-    display: flex;
-  }
+  width: 100%;
 }

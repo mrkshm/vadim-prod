@@ -13,19 +13,21 @@ function SidebarBiographie({ bioPic, citation, source }: BioSidebarProps) {
       <div className="sidebar-photo">
         <img className="sidebarImage" alt="Vadim Sher avec vélo" src={bioPic} />
       </div>
-      <figure>
-        <figcaption>
-          <cite>{citation}</cite>
-          <div className="source">{source}</div>
-        </figcaption>
-      </figure>
-      <a
-        href="https://musards.fr/wp/vadimsher/wp-content/uploads/sites/2/img/CV_Vadim_Sher.doc"
-        className="cv"
-      >
-        <DownloadSimple />
-        <div className="cv-text">Télécharger CV</div>
-      </a>
+      <div className="alting">
+        <figure>
+          <figcaption>
+            <cite>{citation}</cite>
+            <div className="source">{source}</div>
+          </figcaption>
+        </figure>
+        <a
+          href="https://musards.fr/wp/vadimsher/wp-content/uploads/sites/2/img/CV_Vadim_Sher.doc"
+          className="cv"
+        >
+          <DownloadSimple />
+          <div className="cv-text">Télécharger CV</div>
+        </a>
+      </div>
     </div>
   );
 }
