@@ -88,7 +88,19 @@ function ItemsCpDisc({ item, key, albumIndex }: any) {
               <button onClick={() => console.log(tracks)}>
                 Click to log tracks
               </button>
-              <button>Click to log trackIndex</button>
+              <button
+                onClick={() => console.log(tracks[findSongIndex(item.acf.mp3)])}
+              >
+                Click to log trackIndex
+              </button>
+              <button
+                onClick={() =>
+                  console.log(tracks[findSongIndex(item.acf.mp3)].titre)
+                }
+              >
+                log title
+              </button>
+              <button onClick={setActiveTrack(1)}>switch song</button>
 
               <div
                 className="mp3Extrait"
