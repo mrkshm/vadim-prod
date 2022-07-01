@@ -17,10 +17,6 @@ function ItemsCpDisc({ item, key, albumIndex }: any) {
   const setActive = useStore((state) => state.setActive);
   const setActiveTrack = (arg: number) => setActive(arg);
 
-  // @ts-ignore
-  const fetchit = useStore((state) => state.fetch);
-  const fetchit2 = useStore(() => fetch);
-
   const { ref, inView } = useInView();
   const animation = useAnimation();
 
@@ -85,41 +81,17 @@ function ItemsCpDisc({ item, key, albumIndex }: any) {
             </div>
           ) : null}
           {item.acf.mp3 ? (
-            <div>
-              <button onClick={() => console.log(item.acf.mp3)}>
-                Click to log mp3
-              </button>
-              <button onClick={() => console.log(tracks)}>
-                Click to log tracks
-              </button>
-              <button
-                onClick={() => console.log(tracks[findSongIndex(item.acf.mp3)])}
-              >
-                Click to log trackIndex
-              </button>
-              <button
-                onClick={() =>
-                  console.log(tracks[findSongIndex(item.acf.mp3)].titre)
-                }
-              >
-                log title
-              </button>
-              <button onClick={setActiveTrack(1)}>switch song</button>
-              <button onClick={fetchit}>fetchit</button>
-              <button onClick={() => fetchit2}>fetchit2</button>
-
-              <div
-                className="mp3Extrait"
-                onClick={() => setTheTrack(item.acf.mp3)}
-              >
-                <PlayCircle size={32} />{" "}
-                <div>
-                  {" "}
-                  Extrait{" "}
-                  {tracks[findSongIndex(item.acf.mp3)]
-                    ? ` : ${tracks[findSongIndex(item.acf.mp3)].titre}`
-                    : null}
-                </div>
+            <div
+              className="mp3Extrait"
+              onClick={() => setTheTrack(item.acf.mp3)}
+            >
+              <PlayCircle size={32} />{" "}
+              <div>
+                {" "}
+                Extrait{" "}
+                {tracks[findSongIndex(item.acf.mp3)]
+                  ? ` : ${tracks[findSongIndex(item.acf.mp3)].titre}`
+                  : null}
               </div>
             </div>
           ) : null}

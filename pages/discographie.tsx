@@ -8,34 +8,13 @@ function Discographie({ result }: any) {
   const albums = result.sort(sortInvChrono);
 
   // @ts-ignore
-  const populate = useStore((state) => state.populateStore);
-  const populateStore = (nuTracks: any) => populate(nuTracks);
-
-  const fetchData = async () => {
-    const tempTracks: any = [];
-    const response = await fetch(
-      "http://musards.fr/wp/vadimsher/wp-json/wp/v2/posts?categories=10&per_page=30"
-    );
-    const res = await response.json();
-
-    res.forEach((track: any) => {
-      const tempTrack = {
-        id: track.id,
-        titre: track.acf.titre,
-        spectacle: track.acf.spectacle,
-        url: track.acf.url,
-        imageUrl: track.acf.imageUrl,
-      };
-      tempTracks.push(tempTrack);
-    });
-
-    populateStore(tempTracks);
-  };
+  const fetchIt = useStore((state) => state.fetch);
+  const fetchTracks = (url: string) => fetchIt(url);
 
   useEffect(() => {
-    const tempTracks: any = [];
-
-    fetchData();
+    fetchTracks(
+      "http://musards.fr/wp/vadimsher/wp-json/wp/v2/posts?categories=10&per_page=30"
+    );
   }, []);
 
   return (
@@ -44,8 +23,6 @@ function Discographie({ result }: any) {
         <SidebarMusique />
       </div>
       <div className="main">
-        <button onClick={fetchData}>fetch</button>
-        <button onClick={() => fetchData()}>fetch alt</button>
         {albums.map((album: any, index: number) => (
           <ItemsCpDisc item={album} key={album.id} albumIndex={index} />
         ))}
