@@ -9,7 +9,6 @@ function PlayerBar2() {
   const populate = useStore((state) => state.populateStore);
   const populateStore = (arg: Track[]) => populate(arg);
   useEffect(() => {
-    console.log("hello one");
     const tempTracks: Track[] = [];
     const fetchTracks = async () => {
       const result = await fetch(
