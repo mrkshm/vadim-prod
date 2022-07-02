@@ -1,12 +1,5 @@
 import create from "zustand";
-
-interface Track {
-  id: number;
-  titre: string;
-  spectacle: string;
-  url: string;
-  imageUrl: string;
-}
+import { Track } from "../types";
 
 interface TrackState {
   playing: boolean;

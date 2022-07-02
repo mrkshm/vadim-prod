@@ -7,6 +7,7 @@ export interface NavProps {
 }
 
 export interface Track {
+  id: number;
   titre: string;
   spectacle: string;
   url: string;

@@ -1,15 +1,10 @@
 import SidebarMusique from "../components/SidebarMusique";
 import ItemsCpDisc from "../components/ItemsCpDisc";
 import { sortInvChrono } from "../src/utils/helpers";
-import { useStore } from "../src/stores/playStore";
 import Head from "next/head";
 
 function Discographie({ result }: any) {
   const albums = result.sort(sortInvChrono);
-
-  // @ts-ignore
-  const fetchIt = useStore((state) => state.fetch);
-  const fetchTracks = (url: string) => fetchIt(url);
 
   return (
     <div className="mainSection">

@@ -3,16 +3,35 @@ import ReactHowler from "react-howler";
 import { useStore } from "../src/stores/playStore";
 import { useRef, useState, useMemo, useEffect } from "react";
 import { Play, Pause, SkipBack, SkipForward } from "phosphor-react";
-
-interface Track {
-  id: number;
-  titre: string;
-  spectacle: string;
-  url: string;
-  imageUrl: string;
-}
+import { Track } from "../src/types";
 
 function PlayerBar2() {
+  const populate = useStore((state) => state.populateStore);
+  const populateStore = (arg: Track[]) => populate(arg);
+  useEffect(() => {
+    console.log("hello one");
+    const tempTracks: Track[] = [];
+    const fetchTracks = async () => {
+      const result = await fetch(
+        "http://musards.fr/wp/vadimsher/wp-json/wp/v2/posts?categories=10"
+      );
+      const res = await result.json();
+      res.forEach((track: any) => {
+        const tempTrack = {
+          id: track.id,
+          titre: track.acf.titre,
+          spectacle: track.acf.spectacle,
+          url: track.acf.url,
+          imageUrl: track.acf.imageUrl,
+        };
+        tempTracks.push(tempTrack);
+      });
+      populateStore(tempTracks);
+    };
+
+    fetchTracks();
+  }, []);
+
   const [isSeeking, setIsSeeking] = useState(false);
   const [index, setIndex] = useState(0);
   const [seek, setSeek] = useState(0.0);
@@ -21,10 +40,10 @@ function PlayerBar2() {
   const soundRef = useRef(null);
 
   let tracks = useStore((state) => state.tracks);
-  const hydrateTracks = useStore((state) => state.fetch);
-  hydrateTracks(
-    "http://musards.fr/wp/vadimsher/wp-json/wp/v2/posts?categories=10&per_page=30"
-  );
+  // const hydrateTracks = useStore((state) => state.fetch);
+  // hydrateTracks(
+  //   "http://musards.fr/wp/vadimsher/wp-json/wp/v2/posts?categories=10"
+  // );
 
   const activeTrack = useStore((state) => state.activeTrack);
 
