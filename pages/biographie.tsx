@@ -1,10 +1,24 @@
 import SidebarBiographie from "../components/SidebarBiographie";
 import Biographie from "../components/Biographie";
-import { motion } from "framer-motion";
+import Head from "next/head";
 
 function biographie({ bio }: any) {
   return (
     <div className="mainSection">
+      <Head>
+        <title>Vadim Sher - Biographie</title>
+        <meta
+          name="Vadim Sher"
+          content="Vadim Sher - Pianiste, compositeur, musicien de scène"
+        />
+        <script
+          async
+          defer
+          data-website-id="fafc8256-3873-4ad6-adfa-9dc8ffc13593"
+          src="https://s.abla.io/abla.js"
+        ></script>
+        <link rel="icon" href="/favicon.png" />
+      </Head>
       <div className="sidebar">
         <SidebarBiographie
           bioPic={bio.acf.imageUrl}

@@ -2,7 +2,7 @@ import SidebarMusique from "../components/SidebarMusique";
 import ItemsCpDisc from "../components/ItemsCpDisc";
 import { sortInvChrono } from "../src/utils/helpers";
 import { useStore } from "../src/stores/playStore";
-import { useEffect } from "react";
+import Head from "next/head";
 
 function Discographie({ result }: any) {
   const albums = result.sort(sortInvChrono);
@@ -11,14 +11,22 @@ function Discographie({ result }: any) {
   const fetchIt = useStore((state) => state.fetch);
   const fetchTracks = (url: string) => fetchIt(url);
 
-  useEffect(() => {
-    fetchTracks(
-      "http://musards.fr/wp/vadimsher/wp-json/wp/v2/posts?categories=10&per_page=30"
-    );
-  }, []);
-
   return (
     <div className="mainSection">
+      <Head>
+        <title>Vadim Sher - Discographie</title>
+        <meta
+          name="Vadim Sher"
+          content="Vadim Sher - Pianiste, compositeur, musicien de scène"
+        />
+        <script
+          async
+          defer
+          data-website-id="fafc8256-3873-4ad6-adfa-9dc8ffc13593"
+          src="https://s.abla.io/abla.js"
+        ></script>
+        <link rel="icon" href="/favicon.png" />
+      </Head>
       <div className="sidebar">
         <SidebarMusique />
       </div>

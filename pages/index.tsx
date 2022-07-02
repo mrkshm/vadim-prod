@@ -10,9 +10,15 @@ const Home: NextPage = () => {
       <Head>
         <title>Vadim Sher</title>
         <meta
-          name="description"
+          name="Vadim Sher"
           content="Vadim Sher - Pianiste, compositeur, musicien de scène"
         />
+        <script
+          async
+          defer
+          data-website-id="fafc8256-3873-4ad6-adfa-9dc8ffc13593"
+          src="https://s.abla.io/abla.js"
+        ></script>
         <link rel="icon" href="/favicon.png" />
       </Head>
       <img className="bg-image bg-big" src="/wall.jpg" alt="background" />

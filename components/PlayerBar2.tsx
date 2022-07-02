@@ -12,56 +12,29 @@ interface Track {
   imageUrl: string;
 }
 
-// const getTracks = async () => {
-//   const rawRes = await fetch(
-//     "http://musards.fr/wp/vadimsher/wp-json/wp/v2/posts?categories=10&per_page=30"
-//   );
-//   const json = await rawRes.json();
-//   const tempTracks: Track[] = [];
-//   json.forEach((track: any) => {
-//     const newTrack: Track = {
-//       id: track.id,
-//       titre: track.acf.titre,
-//       spectacle: track.acf.spectacle,
-//       url: track.acf.url,
-//       imageUrl: track.acf.imageUrl,
-//     };
-//     tempTracks.push(newTrack);
-//   });
-//   tracks = tempTracks;
-// };
-
-// getTracks();
-
 function PlayerBar2() {
-  // const [activeTrack, setActiveTrack] = useState(0);
   const [isSeeking, setIsSeeking] = useState(false);
   const [index, setIndex] = useState(0);
   const [seek, setSeek] = useState(0.0);
   const [duration, setDuration] = useState(0.0);
   const [volume, setVolume] = useState(1);
   const soundRef = useRef(null);
-  // @ts-ignore
-  let tracks = useStore((state) => state.tracks);
 
-  // @ts-ignore
+  let tracks = useStore((state) => state.tracks);
   const hydrateTracks = useStore((state) => state.fetch);
   hydrateTracks(
     "http://musards.fr/wp/vadimsher/wp-json/wp/v2/posts?categories=10&per_page=30"
   );
-  // @ts-ignore
+
   const activeTrack = useStore((state) => state.activeTrack);
-  // @ts-ignore
+
   const setActive = useStore((state) => state.setActive);
   const setActiveTrack = (arg: number) => setActive(arg);
 
-  // @ts-ignore
   const playing = useStore((state) => state.playing);
-  // @ts-ignore
+
   const setPlay = useStore((state) => state.togglePlaying);
   const setPlaying = (arg: boolean) => setPlay(arg);
-
-  // const [playing, setPlaying] = useState(false);
 
   const displayDuration = useMemo(() => {
     const minutes = Math.floor(duration / 60);
