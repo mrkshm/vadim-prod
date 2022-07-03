@@ -8,24 +8,13 @@ import { Track } from "../src/types";
 function PlayerBar2() {
   const populate = useStore((state) => state.populateStore);
   const populateStore = (arg: Track[]) => populate(arg);
+
   useEffect(() => {
     const tempTracks: Track[] = [];
     const fetchTracks = async () => {
-      const result = await fetch(
-        "http://musards.fr/wp/vadimsher/wp-json/wp/v2/posts?categories=10"
-      );
+      const result = await fetch("/api/hello");
       const res = await result.json();
-      res.forEach((track: any) => {
-        const tempTrack = {
-          id: track.id,
-          titre: track.acf.titre,
-          spectacle: track.acf.spectacle,
-          url: track.acf.url,
-          imageUrl: track.acf.imageUrl,
-        };
-        tempTracks.push(tempTrack);
-      });
-      populateStore(tempTracks);
+      populateStore(res);
     };
 
     fetchTracks();
@@ -39,10 +28,6 @@ function PlayerBar2() {
   const soundRef = useRef(null);
 
   let tracks = useStore((state) => state.tracks);
-  // const hydrateTracks = useStore((state) => state.fetch);
-  // hydrateTracks(
-  //   "http://musards.fr/wp/vadimsher/wp-json/wp/v2/posts?categories=10"
-  // );
 
   const activeTrack = useStore((state) => state.activeTrack);
 
@@ -108,8 +93,6 @@ function PlayerBar2() {
 
   const nextTrack = () => {
     if (activeTrack === tracks.length - 1) {
-      console.log(activeTrack);
-
       setActiveTrack(0);
     } else {
       setActiveTrack(activeTrack + 1);
@@ -127,8 +110,6 @@ function PlayerBar2() {
   };
 
   const onSeek = (e: any) => {
-    console.log("seek is", e);
-
     setSeek(parseFloat(e));
     // @ts-ignore
     soundRef.current.seek(e);
@@ -176,9 +157,6 @@ function PlayerBar2() {
                   <Play
                     onClick={() => {
                       setPlayState(true);
-                      console.log("len");
-
-                      console.log("len is", tracks.length);
                       handlePlay();
                     }}
                   />
@@ -206,7 +184,7 @@ function PlayerBar2() {
         </div>
       </div>
       <div className="volumeSection">
-        <div>Volumes: {displayVolume}</div>
+        <div>Volume : {displayVolume}</div>
         <label className="volSlider">
           <input
             type="range"
