@@ -4,7 +4,7 @@ import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
 import VideoPlayer from "./VideoPlayer";
 
-function Agenda({ spectacle, key }: any) {
+function Agenda({ spectacle, keyer }: any) {
   const { ref, inView } = useInView();
   const animation = useAnimation();
 
@@ -27,7 +27,7 @@ function Agenda({ spectacle, key }: any) {
   }, [inView, ref]);
 
   return (
-    <div key={key} ref={ref}>
+    <div key={keyer} ref={ref}>
       <motion.div animate={animation} className="agendaItem">
         <div className="affiche">
           {spectacle.acf.imageUrl ? (

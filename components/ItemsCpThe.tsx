@@ -6,7 +6,7 @@ import { useInView } from "react-intersection-observer";
 import ImageComponentOdd from "./ImageComponentOdd";
 import ImageComponentEven from "./ImageComponentEven";
 
-function ItemsCpThe({ item, key }: any) {
+function ItemsCpThe({ item, keyer }: any) {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [modalData, setModalData] = useState(null);
 
@@ -32,7 +32,7 @@ function ItemsCpThe({ item, key }: any) {
   }, [inView, ref]);
 
   return (
-    <div key={key} className="oddOrEven" ref={ref}>
+    <div key={keyer} className="oddOrEven" ref={ref}>
       <motion.div animate={animation}>
         {item.acf.video ? (
           <div className="item-line">

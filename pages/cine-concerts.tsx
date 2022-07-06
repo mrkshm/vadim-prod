@@ -2,6 +2,7 @@ import SidebarMusique from "../components/SidebarMusique";
 import Head from "next/head";
 import ItemsCp from "../components/ItemsCp";
 import { sortInvChrono } from "../src/utils/helpers";
+import Script from "next/script";
 
 function cineConcerts({ result }: any) {
   const concerts = result.sort(sortInvChrono);
@@ -13,14 +14,14 @@ function cineConcerts({ result }: any) {
           name="Vadim Sher"
           content="Vadim Sher - Pianiste, compositeur, musicien de scène"
         />
-        <script
-          async
-          defer
-          data-website-id="fafc8256-3873-4ad6-adfa-9dc8ffc13593"
-          src="https://s.abla.io/abla.js"
-        ></script>
         <link rel="icon" href="/favicon.png" />
       </Head>
+      <Script
+        async
+        defer
+        data-website-id="fafc8256-3873-4ad6-adfa-9dc8ffc13593"
+        src="https://s.abla.io/abla.js"
+      ></Script>
       <div className="sidebar">
         <SidebarMusique />
       </div>

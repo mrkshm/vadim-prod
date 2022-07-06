@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
+import Script from "next/script";
 
 const Home: NextPage = () => {
   return (
@@ -13,14 +14,14 @@ const Home: NextPage = () => {
           name="Vadim Sher"
           content="Vadim Sher - Pianiste, compositeur, musicien de scène"
         />
-        <script
-          async
-          defer
-          data-website-id="fafc8256-3873-4ad6-adfa-9dc8ffc13593"
-          src="https://s.abla.io/abla.js"
-        ></script>
         <link rel="icon" href="/favicon.png" />
       </Head>
+      <Script
+        async
+        defer
+        data-website-id="fafc8256-3873-4ad6-adfa-9dc8ffc13593"
+        src="https://s.abla.io/abla.js"
+      ></Script>
       <img className="bg-image bg-big" src="/wall.jpg" alt="background" />
       <img className="bg-small" src="/wall_mob2.jpg" alt="background" />
       <div className="stripe"></div>

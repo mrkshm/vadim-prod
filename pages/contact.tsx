@@ -1,6 +1,7 @@
 import ContactForm from "../components/ContactForm";
 import SidebarContact from "../components/SidebarContact";
 import Head from "next/head";
+import Script from "next/script";
 
 function Contact({ ct }: any) {
   return (
@@ -11,14 +12,14 @@ function Contact({ ct }: any) {
           name="Vadim Sher"
           content="Vadim Sher - Pianiste, compositeur, musicien de scène"
         />
-        <script
-          async
-          defer
-          data-website-id="fafc8256-3873-4ad6-adfa-9dc8ffc13593"
-          src="https://s.abla.io/abla.js"
-        ></script>
         <link rel="icon" href="/favicon.png" />
       </Head>
+      <Script
+        async
+        defer
+        data-website-id="fafc8256-3873-4ad6-adfa-9dc8ffc13593"
+        src="https://s.abla.io/abla.js"
+      ></Script>
       <div className="sidebar">
         <SidebarContact ctPic={ct.acf.imageUrl} />
       </div>

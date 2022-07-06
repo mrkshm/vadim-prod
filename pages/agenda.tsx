@@ -2,6 +2,7 @@ import Head from "next/head";
 import Agenda from "../components/Agenda";
 import SidebarAgenda from "../components/SidebarAgenda";
 import { sortChrono } from "../src/utils/helpers";
+import Script from "next/script";
 
 function agenda({ agendaSideBarPics, agendaItems }: any) {
   const spectacles = agendaItems.sort(sortChrono);
@@ -14,14 +15,14 @@ function agenda({ agendaSideBarPics, agendaItems }: any) {
           name="Vadim Sher"
           content="Vadim Sher - Pianiste, compositeur, musicien de scène"
         />
-        <script
-          async
-          defer
-          data-website-id="fafc8256-3873-4ad6-adfa-9dc8ffc13593"
-          src="https://s.abla.io/abla.js"
-        ></script>
         <link rel="icon" href="/favicon.png" />
       </Head>
+      <Script
+        async
+        defer
+        data-website-id="fafc8256-3873-4ad6-adfa-9dc8ffc13593"
+        src="https://s.abla.io/abla.js"
+      ></Script>
       <div className="sidebar">
         <SidebarAgenda
           img1={agendaSideBarPics.acf.imageUrl1}
@@ -30,7 +31,9 @@ function agenda({ agendaSideBarPics, agendaItems }: any) {
       </div>
       <div className="main agendaMain">
         {spectacles.map((spectacle: any) => (
-          <Agenda key={spectacle.id} spectacle={spectacle} />
+          <div key={spectacle.id}>
+            <Agenda keyer={spectacle.id} spectacle={spectacle} />
+          </div>
         ))}
       </div>
     </div>
