@@ -29,7 +29,7 @@ function musique({ result }: any) {
       </div>
       <div className="main">
         {concerts.map((concert: any) => (
-          <ItemsCpThe item={concert} keyer={concert.id} />
+          <ItemsCpThe item={concert} key={concert.id} />
         ))}
       </div>
     </div>
