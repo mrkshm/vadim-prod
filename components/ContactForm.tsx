@@ -27,17 +27,20 @@ function ContactForm({ ctText }: CformProps) {
       setResMessage(entryError);
       return;
     }
-    const res = await fetch("/api/contact", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        name: contactInfo.name,
-        email: contactInfo.email,
-        message: contactInfo.message,
-      }),
-    });
+    const res = await fetch(
+      "https://super-mandazi-bf5efc.netlify.app/api/contact",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: contactInfo.name,
+          email: contactInfo.email,
+          message: contactInfo.message,
+        }),
+      }
+    );
     if (!res.ok) {
       console.log("erroring");
       setResMessage(failMessage);
