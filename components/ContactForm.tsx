@@ -43,6 +43,11 @@ function ContactForm({ ctText }: CformProps) {
       setResMessage(failMessage);
     } else {
       setResMessage(successMessage);
+      setContactInfo({
+        name: "",
+        email: "",
+        message: "",
+      });
     }
   };
   return (
