@@ -5,7 +5,7 @@ import mail from "@sendgrid/mail";
 mail.setApiKey(process.env.MAIL_API);
 
 const cors = Cors({
-  methods: ["GET", "HEAD"],
+  methods: ["POST", "HEAD"],
 });
 
 function runMiddleware(
