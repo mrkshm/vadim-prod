@@ -1,11 +1,32 @@
 import type { NextApiRequest, NextApiResponse } from "next";
+import Cors from "cors";
 import mail from "@sendgrid/mail";
 // @ts-ignore
 mail.setApiKey(process.env.MAIL_API);
+
+const cors = Cors({
+  methods: ['GET', 'HEAD'],
+})
+
+function runMiddleware(req, res, fn) {
+  return new Promise((resolve, reject) => {
+    fn(req, res, (result) => {
+      if (result instanceof Error) {
+        return reject(result)
+      }
+
+      return resolve(result)
+    })
+  })
+}
+
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
+
+  await runMiddleware(req, res, cors);
+
   // POST
   const { name, email, message } = req.body;
 
