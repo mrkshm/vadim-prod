@@ -28,7 +28,7 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  // await runMiddleware(req, res, cors);
+  await runMiddleware(req, res, cors);
 
   // POST
   const { name, email, message } = req.body;
