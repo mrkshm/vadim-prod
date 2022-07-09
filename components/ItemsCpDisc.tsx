@@ -1,4 +1,4 @@
-import { itemVariants } from "../src/utils/helpers";
+import Mp3Comp from "./Mp3Comp";
 import { useStore } from "../src/stores/playStore";
 import VideoPlayer from "./VideoPlayer";
 import { PlayCircle } from "phosphor-react";
@@ -7,13 +7,11 @@ import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
 
 function ItemsCpDisc({ item, key, albumIndex }: any) {
-  // @ts-ignore
   let tracks = useStore((state) => state.tracks);
-  // @ts-ignore
+
   const setPlay = useStore((state) => state.togglePlaying);
   const setPlaying = (arg: boolean) => setPlay(arg);
 
-  // @ts-ignore
   const setActive = useStore((state) => state.setActive);
   const setActiveTrack = (arg: number) => setActive(arg);
 
@@ -80,26 +78,11 @@ function ItemsCpDisc({ item, key, albumIndex }: any) {
               <VideoPlayer url={item.acf.video} />
             </div>
           ) : null}
-          {item.acf.mp3 ? (
-            <div>
-              <div
-                className="mp3Extrait"
-                onClick={() => setTheTrack(item.acf.mp3)}
-              >
-                <PlayCircle size={32} />{" "}
-                <div>
-                  {" "}
-                  Extrait{" "}
-                  {tracks[findSongIndex(item.acf.mp3)]
-                    ? ` : ${tracks[findSongIndex(item.acf.mp3)].titre}`
-                    : null}
-                </div>
-              </div>
-              <div className="mobileMp3">
-                <audio controls={true} src={item.acf.mp3} />
-              </div>
-            </div>
-          ) : null}
+          <div>
+            {item.acf.mp3 ? <Mp3Comp mp3={item.acf.mp3} /> : null}
+            {item.acf.mp32 ? <Mp3Comp mp3={item.acf.mp32} /> : null}
+            {item.acf.mp33 ? <Mp3Comp mp3={item.acf.mp33} /> : null}
+          </div>
         </div>
 
         <hr className="line" />

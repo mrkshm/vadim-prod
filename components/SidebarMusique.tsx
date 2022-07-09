@@ -22,7 +22,7 @@ const musicNav = [
     url: "/theatre",
     citation:
       "Dans la composition musicale au théâtre, le croisement d’un texte provoque le plaisir d’un virage, l’idée d’un metteur en scène pousse vers l’inexploré, la proposition d’acteur indique un chemin jusque-là invisible. L’harmonie tant recherchée ne se crée jamais seule, elle est toujours le fruit du rapport aux autres.",
-    source: "Vadim Sher",
+    source: " ",
   },
   {
     name: "Cinéma",
@@ -36,7 +36,7 @@ const musicNav = [
     url: "/discographie",
     citation:
       "A ceux qui m’écoutent, je ne cache rien, dans ma musique je raconte tout.",
-    source: "Vadim Sher",
+    source: " ",
   },
 ];
 

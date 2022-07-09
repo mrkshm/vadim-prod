@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useInView } from "react-intersection-observer";
 import ImageComponentOdd from "./ImageComponentOdd";
 import ImageComponentEven from "./ImageComponentEven";
+import Mp3Comp from "./Mp3Comp";
 
 function ItemsCpThe({ item, keyer }: any) {
   const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -37,7 +38,14 @@ function ItemsCpThe({ item, keyer }: any) {
         {item.acf.video ? (
           <div className="item-line">
             <div className="video-part">
-              <VideoPlayer url={item.acf.video} />
+              <div className="playerDiv">
+                <VideoPlayer url={item.acf.video} />
+              </div>
+              <div>
+                {item.acf.mp3 ? <Mp3Comp mp3={item.acf.mp3} /> : null}
+                {item.acf.mp32 ? <Mp3Comp mp3={item.acf.mp32} /> : null}
+                {item.acf.mp33 ? <Mp3Comp mp3={item.acf.mp33} /> : null}
+              </div>
             </div>
             <div className="text-part">
               <div className="item-titleFlex">
@@ -88,6 +96,11 @@ function ItemsCpThe({ item, keyer }: any) {
                 src={item.acf.imageUrl}
                 alt="spectacle"
               />
+              <div className="extraits">
+                {item.acf.mp3 ? <Mp3Comp mp3={item.acf.mp3} /> : null}
+                {item.acf.mp32 ? <Mp3Comp mp3={item.acf.mp32} /> : null}
+                {item.acf.mp33 ? <Mp3Comp mp3={item.acf.mp33} /> : null}
+              </div>
             </div>
             <div className="text-part">
               <div className="item-titleFlex">

@@ -7,6 +7,10 @@
     grid-template-columns: 3fr 7fr;
   }
 
+  .playerDiv {
+    margin-bottom: 16px;
+  }
+
   .theatreMain {
     overflow: auto;
   }
@@ -23,6 +27,12 @@
 
   .sidebar-title-mobile-right {
     display: none;
+  }
+
+  .extraits {
+    font-size: 16px;
+    color: var(--text-color);
+    // font-weight: 300;
   }
 
   .musique-citation {
@@ -66,6 +76,10 @@
 
   .item-info {
     width: 80%;
+  }
+
+  .item-image-main {
+    margin-bottom: 16px;
   }
 
   .mp3Extrait {
