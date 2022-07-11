@@ -28,7 +28,7 @@ const musicNav = [
     name: "Cinéma",
     url: "/cinema",
     citation:
-      "Ce n’est pas d’écrire de la musique qui est difficile, c’est de barrer les notes en trop.",
+      "Ce n’est pas écrire de la musique qui est difficile, c’est de barrer les notes en trop.",
     source: "Johannes Brahms",
   },
   {
