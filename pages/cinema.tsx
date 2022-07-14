@@ -1,11 +1,11 @@
 import SidebarMusique from "../components/SidebarMusique";
 import ItemsCp from "../components/ItemsCp";
-import { sortChrono } from "../src/utils/helpers";
+import { sortInvChrono } from "../src/utils/helpers";
 import Head from "next/head";
 import Script from "next/script";
 
 function cinema({ result }: any) {
-  const films = result.sort(sortChrono);
+  const films = result.sort(sortInvChrono);
 
   return (
     <div className="mainSection">

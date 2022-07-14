@@ -1,11 +1,11 @@
 import SidebarMusique from "../components/SidebarMusique";
 import Head from "next/head";
 import ItemsCp from "../components/ItemsCp";
-import { sortInvChrono } from "../src/utils/helpers";
+import { sortChrono } from "../src/utils/helpers";
 import Script from "next/script";
 
 function cineConcerts({ result }: any) {
-  const concerts = result.sort(sortInvChrono);
+  const concerts = result.sort(sortChrono);
   return (
     <div className="mainSection">
       <Head>
