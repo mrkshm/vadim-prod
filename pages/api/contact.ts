@@ -33,13 +33,13 @@ export default async function handler(
   // POST
   const { name, email, message } = req.body;
 
-  const formulaireHtml = `<p>Vous avez reçu un message de nom : ${name}, email : ${email}.</p><p>Voici le mesage :</p><p>${message}</p>`;
+  const formulaireHtml = `<p>Vous avez reçu un message de <br />nom : ${name}<br /> email : ${email}.</p><p>Voici le mesage :</p><p>${message}</p>`;
 
   const formulaire = `Vous avez reçu un message de nom : ${name}, email : ${email}. Voici le message : ${message}`;
 
   mail
     .send({
-      to: "mrks.heumann@gmail.com",
+      to: "vadimsherparis@gmail.com",
       from: "hey@mrks.me",
       subject: "Nouveau message du site",
       text: formulaire,
